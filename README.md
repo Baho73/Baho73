@@ -6,7 +6,7 @@ Python-разработчик. Строю AI-продукты: от идеи д�
 
 **Основное:** Python, TypeScript, SQL (PostgreSQL, SQLite, MySQL)
 
-**Data Science:** pandas, numpy, matplotlib, Jupyter, обработка и анализ данных
+**Data Science:** pandas, numpy, scikit-learn, matplotlib, seaborn, Jupyter, кластеризация, t-SNE
 
 **AI/ML:** PyTorch, TensorFlow, SKLearn, YOLOv8, Google Gemini, WhisperX, speaker diarization, emotion analysis, computer vision
 
