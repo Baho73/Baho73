@@ -33,7 +33,7 @@ Telegram bot for automated detection of construction defects from photos. AI ana
 
 `Python` `aiogram` `Google Gemini` `Google Sheets API` `Tinkoff API`
 
-### [Analytics Portal](http://147.45.184.55/) | [GitHub](https://github.com/Baho73/WhisperX-Audio-Pipeline)
+### Analytics Portal | [GitHub](https://github.com/Baho73/WhisperX-Audio-Pipeline)
 Business analytics platform with two dashboards:
 
 **Call Analytics** — sales call analysis. AI-powered call quality scoring, BANT lead qualification, conversion funnel, emotion analysis (DUSHA model), manager ranking, sales script adherence, and objection handling.
@@ -43,7 +43,6 @@ Business analytics platform with two dashboards:
 `Chart.js` `EVM` `Gantt` `S-Curve`
 
 **WhisperX Audio Pipeline** — backend transcription pipeline: speech recognition (WhisperX), speaker diarization, emotion analysis. Processes recordings of meetings, calls, and interviews.
-> Demo: `user` / `demo2024`
 
 `Python` `WhisperX` `speaker diarization` `emotion analysis` `FastAPI`
 
@@ -52,7 +51,7 @@ AI agent for automating DevOps operations. Deploy in 15 sec instead of 7 min, lo
 `Python` `LLM` `Docker` `SSH` `Paramiko`
 
 ### [AeroflotSeg](https://github.com/Baho73/AeroflotSeg)
-CV pipeline for object segmentation using PyTorch neural networks: bounding box detection, cropping, resizing, and final segmentation (rembg, SAM, U2-Net). Specialized in metallic objects with specular highlights — model selection and comparison for challenging cases.
+CV pipeline for object segmentation using PyTorch neural networks: bounding box detection, cropping, resizing, and final segmentation (rembg, SAM, U2-Net). Specialized in metallic objects with specular highlights — model selection and comparison for challenging cases. *Hackathon project.*
 `Python` `PyTorch` `OpenCV` `SAM` `U2-Net` `computer vision`
 
 ### [Cluster Optimization](https://github.com/Baho73/cluster-optimization)
@@ -79,19 +78,19 @@ Web application for identifying team roles based on the Belbin model. Full backe
 
 11 LLM-based AI agents deployed to production. Automating sales, consulting, and customer support across various industries:
 
-| Agent | Industry | Purpose |
-|-------|----------|---------|
-| [Cifrium](https://t.me/mvp_cifrium_bot) | EdTech | Course selection, identifying client needs |
-| [Industrial University](https://t.me/DPO_Poly_bot) | Professional Development | Program consulting, scheduling Zoom meetings |
-| [Moscow Polytech](https://t.me/Politeh_FAQ_test_v2_bot) | Higher Education | University admissions consultant |
-| [CruClub](https://t.me/cruclub_test_bot) | Travel | Sea cruise consultant for [cruclub.ru](https://www.cruclub.ru/) |
-| [Developer Consultant](https://t.me/Developer_consultant_bot) | Construction | Legal assistance and construction management advice |
-| [Evraz PM](https://t.me/evraz_pm_bot) | Corporate Training | Project management testing and training assistant |
-| R-Vision | Cybersecurity | R-Vision platform consultant, expert support |
-| [Paint Factory](https://t.me/Paint_test_sales_bot) | Manufacturing/Sales | Paint and coating sales, product selection |
-| Content Manager | Marketing | Content planning, niche trend analysis |
-| [Auto Pawnshop](https://t.me/autolombars_bot) | Finance | Virtual auto pawnshop consultant |
-| [Video Surveillance](https://t.me/b0095_cam_bot) | Security | CCTV and intercom system selection, quote preparation |
+| Industry | Purpose |
+|----------|---------|
+| EdTech | Course selection, identifying client needs |
+| Professional Development | Program consulting, scheduling Zoom meetings |
+| Higher Education | University admissions consultant |
+| Travel | Sea cruise consultant, booking assistance |
+| Construction | Legal assistance and construction management advice |
+| Corporate Training | Project management testing and training assistant |
+| Cybersecurity | Platform consultant, expert support |
+| Manufacturing/Sales | Paint and coating sales, product selection |
+| Marketing | Content planning, niche trend analysis |
+| Finance | Virtual auto pawnshop consultant |
+| Security | CCTV and intercom system selection, quote preparation |
 
 `Python` `aiogram` `LLM` `AI Agents` `Prompt Engineering` `RAG` `Google Sheets API`
 
