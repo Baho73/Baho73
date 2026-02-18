@@ -8,6 +8,8 @@ Python-разработчик. Строю AI-продукты: от идеи д�
 
 **AI/ML:** Google Gemini, WhisperX, speaker diarization, emotion analysis, computer vision
 
+**RAG:** FAISS, векторные БД, embeddings, поиск по документам
+
 **Backend:** aiogram, FastAPI, Docker, SSH-автоматизация, systemd
 
 **Интеграции:** Telegram Bot API, Google Sheets/Drive API, Tinkoff API
