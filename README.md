@@ -70,6 +70,10 @@ Determining the point of impact on a surface via acoustic triangulation. 6 senso
 Computer vision system for a wheel rim production line. Real-time weld seam detection using laser projection and YOLOv8. Determines seam position for precise alignment — the valve hole is drilled on the exact opposite side. Controls disc rotation: stops at the target position.
 `Python` `YOLOv8` `OpenCV` `computer vision` `industrial automation`
 
+### [XL2MD](https://baho73.github.io/XL2MD/) | [GitHub](https://github.com/Baho73/XL2MD)
+Excel to Markdown table converter. Single-file web tool — paste from Excel/Google Sheets, get a formatted Markdown table. No dependencies, no server.
+`JavaScript` `HTML` `GitHub Pages`
+
 ### [Belbin Role Test](https://roletest.ru)
 Web application for identifying team roles based on the Belbin model. Full backend with PostgreSQL, Docker deployment.
 `Python` `PostgreSQL` `Docker` `JavaScript`
