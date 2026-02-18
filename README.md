@@ -10,7 +10,7 @@ Python-разработчик. Строю AI-продукты: от идеи д�
 
 **AI/ML:** PyTorch, TensorFlow, SKLearn, YOLOv8, Google Gemini, WhisperX, speaker diarization, emotion analysis, computer vision
 
-**RAG:** FAISS, векторные БД, embeddings, поиск по документам
+**RAG:** FAISS, векторные БД, embeddings, поиск по документам, [Docling](https://github.com/Baho73/docling) (PDF→Markdown), [DolphinPDF](https://github.com/Baho73/DolphinPDF) (Document Image Parsing)
 
 **Backend:** aiogram, FastAPI, Docker, SSH-автоматизация, systemd
 
