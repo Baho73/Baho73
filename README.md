@@ -1,104 +1,107 @@
+[🇬🇧 English version](README.en.md)
+
 # Ivan Ponomarev
 
-Python developer. I build AI products end-to-end: from concept to production-ready services.
+Python-разработчик. Строю AI-продукты: от идеи до работающего сервиса на проде.
 
-## Tech Stack
+## Стек
 
-**Core:** Python, TypeScript, SQL (PostgreSQL, SQLite, MySQL)
+**Основное:** Python, TypeScript, SQL (PostgreSQL, SQLite, MySQL)
 
-**Data Science:** pandas, numpy, scikit-learn, matplotlib, seaborn, Jupyter, clustering, t-SNE
+**Data Science:** pandas, numpy, scikit-learn, matplotlib, seaborn, Jupyter, кластеризация, t-SNE
 
 **Scientific Computing:** SciPy, SymPy, Lagrangian mechanics, optimization (genetic algorithms, least squares)
 
 **AI/ML:** PyTorch, TensorFlow, SKLearn, YOLOv8, Google Gemini, WhisperX, speaker diarization, emotion analysis, computer vision
 
-**RAG:** FAISS, vector databases, embeddings, document search, [Docling](https://github.com/Baho73/docling) (PDF→Markdown), [DolphinPDF](https://github.com/Baho73/DolphinPDF) (Document Image Parsing)
+**RAG:** FAISS, векторные БД, embeddings, поиск по документам, [Docling](https://github.com/Baho73/docling) (PDF→Markdown), [DolphinPDF](https://github.com/Baho73/DolphinPDF) (Document Image Parsing)
 
-**Backend:** aiogram, FastAPI, Docker, SSH automation, systemd
+**Backend:** aiogram, FastAPI, Docker, SSH-автоматизация, systemd
 
-**Integrations:** Telegram Bot API, Google Sheets/Drive API, Tinkoff API
+**Интеграции:** Telegram Bot API, Google Sheets/Drive API, Tinkoff API
 
-**DevOps:** Docker, CI/CD, deployment automation via Python + SSH
+**DevOps:** Docker, CI/CD, автоматизация деплоя через Python + SSH
 
-## Projects
+## Проекты
 
 ### [Fluffy Fox Ear](https://foxear.ru) | [GitHub](https://github.com/Baho73/Fluffy-Fox-Ear)
-Enterprise SaaS for transcribing dissertation defenses. Full pipeline: audio upload, transcription, speaker diarization, and protocol generation.
+Корпоративный SaaS для транскрибации защит диссертаций. Полный цикл: загрузка аудио, транскрибация, диаризация спикеров, генерация протоколов.
 `Python` `TypeScript` `Docker`
 
 ### DefectMaster Bot — [stroycontrolbot.ru](https://stroycontrolbot.ru) | [stroycontrolai.ru](https://stroycontrolai.ru) | [GitHub](https://github.com/Baho73/DefectMaster-Bot)
-Telegram bot for automated detection of construction defects from photos. AI analysis via Google Gemini with references to Russian building codes (SNiP, GOST, SP). Auto-generates reports in Google Sheets. Built-in balance system with payments via Tinkoff.
-- **stroycontrolbot.ru** — for individuals
-- **stroycontrolai.ru** — for businesses
+Telegram-бот для автоматического выявления строительных дефектов по фото. AI-анализ через Google Gemini с привязкой к нормам РФ (СНиП, ГОСТ, СП). Автогенерация отчётов в Google Таблицы. Встроенная система балансов и оплата через Tinkoff.
+- **stroycontrolbot.ru** — для физических лиц
+- **stroycontrolai.ru** — для юридических лиц
 
 `Python` `aiogram` `Google Gemini` `Google Sheets API` `Tinkoff API`
 
-### Analytics Portal | [GitHub](https://github.com/Baho73/WhisperX-Audio-Pipeline)
-Business analytics platform with two dashboards:
+### [Analytics Portal](http://147.45.184.55/) | [GitHub](https://github.com/Baho73/WhisperX-Audio-Pipeline)
+Платформа бизнес-аналитики с двумя дашбордами:
 
-**Call Analytics** — sales call analysis. AI-powered call quality scoring, BANT lead qualification, conversion funnel, emotion analysis (DUSHA model), manager ranking, sales script adherence, and objection handling.
+**Call Analytics** — анализ телефонных переговоров отдела продаж. AI-скоринг качества звонков, BANT-квалификация лидов, воронка конверсии, эмоциональный анализ (модель DUSHA), рейтинг менеджеров, следование скрипту продаж, обработка возражений.
 `React` `Chart.js` `BANT scoring` `emotion analysis`
 
-**Construction Dashboard** — construction project management. EVM analysis (CPI/SPI), Gantt chart with drill-down, budget S-curve, task and assignee monitoring.
+**Construction Dashboard** — управление строительными проектами. EVM-анализ (CPI/SPI), диаграмма Ганта с drill-down, S-кривая освоения бюджета, мониторинг задач и ответственных.
 `Chart.js` `EVM` `Gantt` `S-Curve`
 
-**WhisperX Audio Pipeline** — backend transcription pipeline: speech recognition (WhisperX), speaker diarization, emotion analysis. Processes recordings of meetings, calls, and interviews.
+**WhisperX Audio Pipeline** — бэкенд-пайплайн транскрибации: распознавание речи (WhisperX), диаризация спикеров, анализ эмоций. Обработка аудиозаписей совещаний, звонков и интервью.
+> Demo: `user` / `demo2024`
 
 `Python` `WhisperX` `speaker diarization` `emotion analysis` `FastAPI`
 
 ### [AI DevOps Automation](https://github.com/Baho73/ai-devops-automation)
-AI agent for automating DevOps operations. Deploy in 15 sec instead of 7 min, log analysis in 10 sec, DB migrations in 30 sec. The agent reads scripts and .env files, connects via SSH, and manages Docker containers.
+AI-агент для автоматизации DevOps-операций. Деплой за 15 сек вместо 7 мин, анализ логов за 10 сек, миграции БД за 30 сек. Агент читает скрипты и .env, подключается по SSH, управляет Docker-контейнерами.
 `Python` `LLM` `Docker` `SSH` `Paramiko`
 
 ### [AeroflotSeg](https://github.com/Baho73/AeroflotSeg)
-CV pipeline for object segmentation using PyTorch neural networks: bounding box detection, cropping, resizing, and final segmentation (rembg, SAM, U2-Net). Specialized in metallic objects with specular highlights — model selection and comparison for challenging cases. *Hackathon project.*
+CV-пайплайн сегментации объектов на фото с использованием нейросетей PyTorch: детекция bbox, кроп, ресайз и финальная сегментация (rembg, SAM, U2-Net). Специализация на металлических объектах с бликами — подбор и сравнение моделей для сложных кейсов.
 `Python` `PyTorch` `OpenCV` `SAM` `U2-Net` `computer vision`
 
 ### [Cluster Optimization](https://github.com/Baho73/cluster-optimization)
-End-to-end DS pipeline for clustering 45K text embeddings. Data cleaning via an ensemble of 3 methods (KNN, LOF, Isolation Forest), optimal k selection using 4 metrics (Elbow, Silhouette, Calinski-Harabasz, Davies-Bouldin), final KMeans clustering + t-SNE visualization.
+Полный DS-пайплайн кластеризации 45K текстовых эмбеддингов. Очистка данных ансамблем из 3 методов (KNN, LOF, Isolation Forest), подбор оптимального k четырьмя метриками (Elbow, Silhouette, Calinski-Harabasz, Davies-Bouldin), финальная кластеризация KMeans + t-SNE визуализация.
 `Python` `scikit-learn` `pandas` `matplotlib` `t-SNE` `KMeans`
 
 ### [Trebuchet Simulator](https://github.com/Baho73/trebuchet-simulator)
-Physics simulator for a 4-degree-of-freedom trebuchet. Lagrangian mechanics, symbolic derivation of equations of motion via SymPy, auto-generated NumPy code. Design optimization using a genetic algorithm (differential evolution). Result: 2,840 m range with all constraints satisfied.
+Физический симулятор требушета с 4 степенями свободы. Лагранжева механика, символьный вывод уравнений движения через SymPy, автогенерация NumPy-кода. Оптимизация конструкции генетическим алгоритмом (differential evolution). Результат: дальность 2 840 м при соблюдении всех ограничений.
 `Python` `NumPy` `SciPy` `SymPy` `Matplotlib`
 
 ### [Acoustic Impact Localization](https://github.com/Baho73/acoustic-impact-localization)
-Determining the point of impact on a surface via acoustic triangulation. 6 sensors, nonlinear optimization (least squares), result visualization.
+Определение точки удара на поверхности методом акустической триангуляции. 6 датчиков, нелинейная оптимизация (least squares), визуализация результатов.
 `Python` `NumPy` `SciPy` `Matplotlib`
 
 ### Weld Seam Detection | [Demo](https://youtu.be/ie_D0QS-dDo)
-Computer vision system for a wheel rim production line. Real-time weld seam detection using laser projection and YOLOv8. Determines seam position for precise alignment — the valve hole is drilled on the exact opposite side. Controls disc rotation: stops at the target position.
+Система компьютерного зрения для производственной линии колёсных дисков. Детекция сварного шва в реальном времени через лазерную проекцию и YOLOv8. Определяет положение шва для точного позиционирования — отверстие под ниппель сверлится строго с противоположной стороны. Управление вращением диска: остановка при достижении нужной позиции.
 `Python` `YOLOv8` `OpenCV` `computer vision` `industrial automation`
 
 ### [XL2MD](https://baho73.github.io/XL2MD/) | [GitHub](https://github.com/Baho73/XL2MD)
-Excel to Markdown table converter. Single-file web tool — paste from Excel/Google Sheets, get a formatted Markdown table. No dependencies, no server.
+Конвертер таблиц Excel в Markdown. Однофайловый веб-инструмент — вставляете из Excel/Google Sheets, получаете готовую Markdown-таблицу. Без зависимостей, без сервера.
 `JavaScript` `HTML` `GitHub Pages`
 
 ### [Belbin Role Test](https://roletest.ru)
-Web application for identifying team roles based on the Belbin model. Full backend with PostgreSQL, Docker deployment.
+Веб-приложение для определения командных ролей по Белбину. Полноценный бэкенд с PostgreSQL, Docker-деплой.
 `Python` `PostgreSQL` `Docker` `JavaScript`
 
-## AI Agents in Production
+## AI-агенты в продакшене
 
-11 LLM-based AI agents deployed to production. Automating sales, consulting, and customer support across various industries:
+11 ИИ-агентов на базе LLM, задеплоенных в продакшен. Автоматизация продаж, консультаций и клиентской поддержки в различных отраслях:
 
-| Industry | Purpose |
-|----------|---------|
-| EdTech | Course selection, identifying client needs |
-| Professional Development | Program consulting, scheduling Zoom meetings |
-| Higher Education | University admissions consultant |
-| Travel | Sea cruise consultant, booking assistance |
-| Construction | Legal assistance and construction management advice |
-| Corporate Training | Project management testing and training assistant |
-| Cybersecurity | Platform consultant, expert support |
-| Manufacturing/Sales | Paint and coating sales, product selection |
-| Marketing | Content planning, niche trend analysis |
-| Finance | Virtual auto pawnshop consultant |
-| Security | CCTV and intercom system selection, quote preparation |
+| Агент | Сфера | Задача |
+|-----|-------|--------|
+| [Цифриум](https://t.me/mvp_cifrium_bot) | EdTech | Подбор программ обучения, выявление потребностей клиентов |
+| [Промышленный Университет](https://t.me/DPO_Poly_bot) | ДПО | Консультация по программам, назначение ZOOM-встреч |
+| [Московский Политех](https://t.me/Politeh_FAQ_test_v2_bot) | Высшее образование | Консультант по зачислению в университет |
+| [CruClub](https://t.me/cruclub_test_bot) | Туризм | Консультант по морским круизам для [cruclub.ru](https://www.cruclub.ru/) |
+| [Застройщик](https://t.me/Developer_consultant_bot) | Строительство | Юридическая помощь и советы по организации строительства |
+| [Евраз PM](https://t.me/evraz_pm_bot) | Корпоративное обучение | Помощник по тестам и обучению управлению проектами |
+| R-Vision | Кибербезопасность | Консультант по системе R-Vision, экспертная поддержка |
+| [Лакокрасочный завод](https://t.me/Paint_test_sales_bot) | Производство/Продажи | Менеджер по продаже ЛКМ, подбор краски и материалов |
+| Контент-менеджер | Маркетинг | Составление контент-планов, анализ трендов под нишу |
+| [Автоломбард](https://t.me/autolombars_bot) | Финансы | Виртуальный консультант автоломбардов |
+| [Видеонаблюдение](https://t.me/b0095_cam_bot) | Безопасность | Подбор систем видеонаблюдения и домофонов, подготовка КП |
 
 `Python` `aiogram` `LLM` `AI Agents` `Prompt Engineering` `RAG` `Google Sheets API`
 
-## Contacts
+## Контакты
 
 [![Telegram](https://img.shields.io/badge/Telegram-@IvanPonomarev-blue?logo=telegram)](https://t.me/IvanPonomarev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-ivanponomarev-blue?logo=linkedin)](https://linkedin.com/in/ivanponomarev)
