@@ -24,7 +24,7 @@ Python developer. I build AI products end-to-end: from concept to production-rea
 
 ## Projects
 
-### [Fluffy Fox Ear](https://foxear.ru) | [GitHub](https://github.com/Baho73/Fluffy-Fox-Ear)
+### [Fluffy Fox Ear](https://foxear.ru) *(private repo)*
 Enterprise SaaS for transcribing dissertation defenses. Full pipeline: audio upload, transcription, speaker diarization, and protocol generation.
 `Python` `TypeScript` `Docker`
 
