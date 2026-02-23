@@ -48,6 +48,10 @@ Business analytics platform with two dashboards:
 
 `Python` `WhisperX` `speaker diarization` `emotion analysis` `FastAPI`
 
+### [PrimaX](https://github.com/Baho73/PrimaX)
+Python library + FastAPI service for Primavera P6 schedule health analysis (.xer). Imports schedules, builds a dependency graph (networkx), runs 9 deterministic checks (cycles, late tasks, zero float, dangling relations, etc.), computes critical path (longest-path DP) and floats (total/free). CLI + REST API. Reports in JSON and Markdown.
+`Python` `FastAPI` `pydantic` `networkx` `typer` `Primavera P6`
+
 ### [AI DevOps Automation](https://github.com/Baho73/ai-devops-automation)
 AI agent for automating DevOps operations. Deploy in 15 sec instead of 7 min, log analysis in 10 sec, DB migrations in 30 sec. The agent reads scripts and .env files, connects via SSH, and manages Docker containers.
 `Python` `LLM` `Docker` `SSH` `Paramiko`
