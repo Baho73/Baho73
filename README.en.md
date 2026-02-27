@@ -28,6 +28,10 @@ Python developer. I build AI products end-to-end: from concept to production-rea
 Enterprise SaaS for transcribing dissertation defenses. Full pipeline: audio upload, transcription, speaker diarization, and protocol generation.
 `Python` `TypeScript` `Docker`
 
+### [PlanPulse](https://planpulse.ru) — [Telegram Bot](https://t.me/PlanPulseBot) | [Web App](https://planpulse.ru/app/) | *(private repo)*
+Production service for automated construction schedule health analysis. Microservice architecture with 8 Docker containers: parser for 30+ formats (Primavera P6, MS Project, Asta Powerproject, etc. via MPXJ Java bridge), dependency graph, critical path, 31 checks per DCMA-14 standard and proprietary PRIM_X methodology. AI-powered explanations via OpenRouter, Google Docs report export, visual HTML dashboard. Three interfaces: Telegram bot, web app (SPA), REST API. Billing via YooKassa + Telegram Stars, admin panel, corporate portal. CI/CD with auto-deploy to VPS.
+`Python` `FastAPI` `Docker` `MPXJ` `aiogram` `Google Docs API` `OpenRouter` `nginx` `DCMA-14`
+
 ### DefectMaster Bot — [stroycontrolbot.ru](https://stroycontrolbot.ru) | [stroycontrolai.ru](https://stroycontrolai.ru) | [GitHub](https://github.com/Baho73/DefectMaster-Bot)
 Telegram bot for automated detection of construction defects from photos. AI analysis via Google Gemini with references to Russian building codes (SNiP, GOST, SP). Auto-generates reports in Google Sheets. Built-in balance system with payments via Tinkoff.
 - **stroycontrolbot.ru** — for individuals
@@ -47,10 +51,6 @@ Business analytics platform with two dashboards:
 **WhisperX Audio Pipeline** — backend transcription pipeline: speech recognition (WhisperX), speaker diarization, emotion analysis. Processes recordings of meetings, calls, and interviews.
 
 `Python` `WhisperX` `speaker diarization` `emotion analysis` `FastAPI`
-
-### [PrimaX](https://github.com/Baho73/PrimaX)
-Python library + FastAPI service for Primavera P6 schedule health analysis (.xer). Imports schedules, builds a dependency graph (networkx), runs 9 deterministic checks (cycles, late tasks, zero float, dangling relations, etc.), computes critical path (longest-path DP) and floats (total/free). CLI + REST API. Reports in JSON and Markdown.
-`Python` `FastAPI` `pydantic` `networkx` `typer` `Primavera P6`
 
 ### [AI DevOps Automation](https://github.com/Baho73/ai-devops-automation)
 AI agent for automating DevOps operations. Deploy in 15 sec instead of 7 min, log analysis in 10 sec, DB migrations in 30 sec. The agent reads scripts and .env files, connects via SSH, and manages Docker containers.
