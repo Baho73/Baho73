@@ -1,117 +1,118 @@
 [🇬🇧 English version](README.en.md)
 
+> **Два взгляда на один профиль:**
+> **Архитектор / Product Manager** *(вы здесь)* | [Разработчик](README_developer.md)
+
 # Ivan Ponomarev
 
-Python-разработчик. Строю AI-продукты: от идеи до работающего сервиса на проде.
+20+ лет в строительной отрасли в роли РП, PMO и планировщика. Строю AI-продукты, которые решают реальные проблемы стройки - от ведения протоколов штабов и распределения командных ролей до аудита расписаний и контроля дефектов.
 
-## Стек
+## Что я делаю
 
-**Основное:** Python, TypeScript, SQL (PostgreSQL, SQLite, MySQL)
+Проектирую и вывожу в продакшен AI-системы для строительной отрасли. Не как подрядчик со стороны IT, а как человек, который 20 лет составлял КСГ, ходил на штабы и координировал подрядчиков - и понимает, где болит.
 
-**Data Science:** pandas, numpy, scikit-learn, matplotlib, seaborn, Jupyter, кластеризация, t-SNE
+6 продуктов в продакшене. 11 AI-агентов для реальных клиентов. Полный цикл: от формулировки задачи до работающего корпоративного сервиса или SaaS с биллингом.
 
-**Scientific Computing:** SciPy, SymPy, Lagrangian mechanics, optimization (genetic algorithms, least squares)
+---
 
-**AI/ML:** PyTorch, TensorFlow, SKLearn, YOLOv8, Google Gemini, WhisperX, speaker diarization, emotion analysis, computer vision
+## Продукты
 
-**RAG:** FAISS, векторные БД, embeddings, поиск по документам, [Docling](https://github.com/Baho73/docling) (PDF→Markdown), [DolphinPDF](https://github.com/Baho73/DolphinPDF) (Document Image Parsing)
+### [PlanPulse](https://planpulse.ru) - автоматический аудит строительных расписаний
+Руководитель проекта загружает график - через 30 секунд получает заключение: где проблемы, что доработать, насколько график реалистичен. Без опыта в КСП.
 
-**Backend:** aiogram, FastAPI, Docker, SSH-автоматизация, systemd
+- Парсинг **30+ форматов** расписаний (Primavera P6, MS Project, Asta Powerproject) через MPXJ
+- **31 проверка** по стандартам DCMA-14 и авторской методике PRIM_X
+- AI-пояснения к каждой проверке на понятном языке
+- Три интерфейса: Telegram-бот, Web App, REST API
+- Микросервисная архитектура: 8 Docker-контейнеров, FastAPI, CI/CD, биллинг ЮKassa
 
-**Интеграции:** Telegram Bot API, Google Sheets/Drive API, Tinkoff API
+`planpulse.ru` | [Telegram Bot](https://t.me/PrimaX_wbs_bot) | [Web App](https://planpulse.ru/app/)
 
-**DevOps:** Docker, CI/CD, автоматизация деплоя через Python + SSH
+### DefectMaster - AI-анализ строительных дефектов
+Инспектор фотографирует дефект - бот определяет тип, оценивает критичность и указывает, какой СНиП, ГОСТ или СП нарушен. Автоматическая генерация отчёта.
 
-## Проекты
+- AI-анализ изображений через Google Gemini (Vision)
+- Привязка к нормативной базе РФ - не абстрактное описание, а конкретная норма
+- Два продукта: [stroycontrolbot.ru](https://stroycontrolbot.ru) (B2C) и [stroycontrolai.ru](https://stroycontrolai.ru) (B2B)
 
-### [Fluffy Fox Ear](https://foxear.ru) *(private repo)*
-Корпоративный SaaS для транскрибации защит диссертаций. Полный цикл: загрузка аудио, транскрибация, диаризация спикеров, генерация протоколов.
-`Python` `TypeScript` `Docker`
+### [Штаб](https://protokolov.net) - цифровизация строительных совещаний
+Каждую неделю на стройке - штаб. Десятки поручений, сроки, ответственные. Протоколы ведутся в Word или Excel, рассылаются по почте и теряются. «Штаб» решает это:
 
-### [PlanPulse](https://planpulse.ru) — [Telegram Bot](https://t.me/PlanPulseBot) | [Web App](https://planpulse.ru/app/) | *(private repo)*
-Продакшн-сервис для автоматического аудита расписаний строительных проектов. Микросервисная архитектура из 8 Docker-контейнеров: парсер 30+ форматов (Primavera P6, MS Project, Asta Powerproject и др. через MPXJ Java-мост), граф зависимостей, критический путь, 31 проверка по стандарту DCMA-14 и авторской методике PRIM_X. AI-пояснения через OpenRouter, экспорт отчётов в Google Docs, визуальный HTML-дашборд. Три интерфейса: Telegram-бот, веб-приложение (SPA), REST API. Биллинг через ЮKassa + Telegram Stars, админ-панель, корпоративный портал. CI/CD с автодеплоем на VPS.
-`Python` `FastAPI` `Docker` `MPXJ` `aiogram` `Google Docs API` `OpenRouter` `nginx` `DCMA-14`
+- Импорт существующих протоколов, формирование пунктов с голоса
+- AI-помощь с формулировками и созданием чек-листов
+- Контроль исполнения поручений, напоминания исполнителям
+- Первичный анализ и обратная связь по предоставленным отчётам
+- Уведомления по email и Telegram-бот
+- Дашборд с аналитикой, отслеживание сроков
 
-### DefectMaster Bot — [stroycontrolbot.ru](https://stroycontrolbot.ru) | [stroycontrolai.ru](https://stroycontrolai.ru) | *(private repo)*
-Telegram-бот для автоматического выявления строительных дефектов по фото. AI-анализ через Google Gemini с привязкой к нормам РФ (СНиП, ГОСТ, СП). Автогенерация отчётов в Google Таблицы. Встроенная система балансов и оплата через Tinkoff.
-- **stroycontrolbot.ru** — для физических лиц
-- **stroycontrolai.ru** — для юридических лиц
+### [Loomio AI](https://teamplan.ru) - мультиагентная экспертная среда
+Три LLM-эксперта (Claude, Gemini, GPT) по очереди отвечают человеку-эксперту в треде. Каждый рассматривает вопрос с разных сторон. Создан и применяется для разработки расширенной методики анализа строительных графиков с участием ~100 экспертов.
 
-`Python` `aiogram` `Google Gemini` `Google Sheets API` `Tinkoff API`
+### [Belbin Role Test](https://roletest.ru) - анализ командных ролей
+Инструмент, который я использовал как РП для формирования проектных команд. Психометрический анализ по методике Белбина: определяет роль каждого участника, показывает баланс команды и подсказывает, кого не хватает. Помогает при подборе новых участников и перераспределении ответственности. И поскольку этим проектом помимо суровых РП пользуются HR - там есть котики!
 
-### [Штаб](https://protokolov.net) — Система управления строительными совещаниями | *(private repo)*
-SaaS для цифровизации протокола строительного штаба с AI-слоем. Автоматическое формирование протоколов совещаний, контроль поручений, отслеживание сроков исполнения. Интеграция с процессами стройки.
-`Python` `FastAPI` `Docker` `AI` `PostgreSQL`
+### [Fluffy Fox Ear](https://foxear.ru) - транскрибация и протоколирование
+Корпоративный SaaS: загрузка аудиозаписей совещаний и защит, транскрибация (WhisperX), диаризация спикеров, генерация структурированных протоколов. Работа с несколькими микрофонами для выбора лучшей записи, анализ транскрибации с учётом контекста - например, текста диссертации или автореферата. Эта разработка также применена в проекте [Штаб](https://protokolov.net)
 
-### [Loomio AI](https://teamplan.ru) — Мультиагентная экспертная среда | *(private repo)*
-Экспертная среда на базе self-hosted Loomio с **тремя AI-экспертами** (Claude 4.6, Gemini 3.1 Pro, GPT 5.4). Когда человек-эксперт пишет в тред, ему по очереди отвечают три LLM, рассматривая вопрос с разных сторон. Создаёт коллаборативную среду для обсуждения сложных вопросов между человеком и тремя ИИ. Применяется для разработки расширенной методики анализа строительных графиков (с 31 до 100 пунктов проверки).
-`Ruby` `Loomio` `Claude API` `Gemini API` `OpenAI API` `Multi-Agent AI`
-
-### [Analytics Portal](http://147.45.184.55/) | [GitHub](https://github.com/Baho73/WhisperX-Audio-Pipeline)
-Платформа бизнес-аналитики с двумя дашбордами:
-
-**Call Analytics** — анализ телефонных переговоров отдела продаж. AI-скоринг качества звонков, BANT-квалификация лидов, воронка конверсии, эмоциональный анализ (модель DUSHA), рейтинг менеджеров, следование скрипту продаж, обработка возражений.
-`React` `Chart.js` `BANT scoring` `emotion analysis`
-
-**Construction Dashboard** — управление строительными проектами. EVM-анализ (CPI/SPI), диаграмма Ганта с drill-down, S-кривая освоения бюджета, мониторинг задач и ответственных.
-`Chart.js` `EVM` `Gantt` `S-Curve`
-
-**WhisperX Audio Pipeline** — бэкенд-пайплайн транскрибации: распознавание речи (WhisperX), диаризация спикеров, анализ эмоций. Обработка аудиозаписей совещаний, звонков и интервью.
-> Demo: `user` / `demo2024`
-
-`Python` `WhisperX` `speaker diarization` `emotion analysis` `FastAPI`
-
-### [AI DevOps Automation](https://github.com/Baho73/ai-devops-automation)
-AI-агент для автоматизации DevOps-операций. Деплой за 15 сек вместо 7 мин, анализ логов за 10 сек, миграции БД за 30 сек. Агент читает скрипты и .env, подключается по SSH, управляет Docker-контейнерами.
-`Python` `LLM` `Docker` `SSH` `Paramiko`
-
-### [AeroflotSeg](https://github.com/Baho73/AeroflotSeg)
-CV-пайплайн сегментации объектов на фото с использованием нейросетей PyTorch: детекция bbox, кроп, ресайз и финальная сегментация (rembg, SAM, U2-Net). Специализация на металлических объектах с бликами — подбор и сравнение моделей для сложных кейсов.
-`Python` `PyTorch` `OpenCV` `SAM` `U2-Net` `computer vision`
-
-### [Cluster Optimization](https://github.com/Baho73/cluster-optimization)
-Полный DS-пайплайн кластеризации 45K текстовых эмбеддингов. Очистка данных ансамблем из 3 методов (KNN, LOF, Isolation Forest), подбор оптимального k четырьмя метриками (Elbow, Silhouette, Calinski-Harabasz, Davies-Bouldin), финальная кластеризация KMeans + t-SNE визуализация.
-`Python` `scikit-learn` `pandas` `matplotlib` `t-SNE` `KMeans`
-
-### [Trebuchet Simulator](https://github.com/Baho73/trebuchet-simulator)
-Физический симулятор требушета с 4 степенями свободы. Лагранжева механика, символьный вывод уравнений движения через SymPy, автогенерация NumPy-кода. Оптимизация конструкции генетическим алгоритмом (differential evolution). Результат: дальность 2 840 м при соблюдении всех ограничений.
-`Python` `NumPy` `SciPy` `SymPy` `Matplotlib`
-
-### [Acoustic Impact Localization](https://github.com/Baho73/acoustic-impact-localization)
-Определение точки удара на поверхности методом акустической триангуляции. 6 датчиков, нелинейная оптимизация (least squares), визуализация результатов.
-`Python` `NumPy` `SciPy` `Matplotlib`
-
-### Weld Seam Detection | [Demo](https://youtu.be/ie_D0QS-dDo)
-Система компьютерного зрения для производственной линии колёсных дисков. Детекция сварного шва в реальном времени через лазерную проекцию и YOLOv8. Определяет положение шва для точного позиционирования — отверстие под ниппель сверлится строго с противоположной стороны. Управление вращением диска: остановка при достижении нужной позиции.
-`Python` `YOLOv8` `OpenCV` `computer vision` `industrial automation`
-
-### [XL2MD](https://baho73.github.io/XL2MD/) | [GitHub](https://github.com/Baho73/XL2MD)
-Конвертер таблиц Excel в Markdown. Однофайловый веб-инструмент — вставляете из Excel/Google Sheets, получаете готовую Markdown-таблицу. Без зависимостей, без сервера.
-`JavaScript` `HTML` `GitHub Pages`
-
-### [Belbin Role Test](https://roletest.ru) *(private repo)*
-Веб-приложение для определения командных ролей по Белбину. Полноценный бэкенд с PostgreSQL, Docker-деплой.
-`Python` `PostgreSQL` `Docker` `JavaScript`
+---
 
 ## AI-агенты в продакшене
 
-11 ИИ-агентов на базе LLM, задеплоенных в продакшен. Автоматизация продаж, консультаций и клиентской поддержки в различных отраслях:
+11 агентов на базе LLM для автоматизации продаж, консультаций и клиентской поддержки. Каждый - не шаблонный чат-бот, а система с RAG, интеграциями и пониманием предметной области.
 
 | Агент | Сфера | Задача |
-|-----|-------|--------|
-| [Цифриум](https://t.me/mvp_cifrium_bot) | EdTech | Подбор программ обучения, выявление потребностей клиентов |
+|-------|-------|--------|
+| [Цифриум](https://t.me/mvp_cifrium_bot) | EdTech | Подбор программ обучения, выявление потребностей |
 | [Промышленный Университет](https://t.me/DPO_Poly_bot) | ДПО | Консультация по программам, назначение ZOOM-встреч |
-| [Московский Политех](https://t.me/Politeh_FAQ_test_v2_bot) | Высшее образование | Консультант по зачислению в университет |
-| [CruClub](https://t.me/cruclub_test_bot) | Туризм | Консультант по морским круизам для [cruclub.ru](https://www.cruclub.ru/) |
-| [Застройщик](https://t.me/Developer_consultant_bot) | Строительство | Юридическая помощь и советы по организации строительства |
-| [Евраз PM](https://t.me/evraz_pm_bot) | Корпоративное обучение | Помощник по тестам и обучению управлению проектами |
-| R-Vision | Кибербезопасность | Консультант по системе R-Vision, экспертная поддержка |
-| [Лакокрасочный завод](https://t.me/Paint_test_sales_bot) | Производство/Продажи | Менеджер по продаже ЛКМ, подбор краски и материалов |
-| Контент-менеджер | Маркетинг | Составление контент-планов, анализ трендов под нишу |
-| [Автоломбард](https://t.me/autolombars_bot) | Финансы | Виртуальный консультант автоломбардов |
-| [Видеонаблюдение](https://t.me/b0095_cam_bot) | Безопасность | Подбор систем видеонаблюдения и домофонов, подготовка КП |
+| [Московский Политех](https://t.me/Politeh_FAQ_test_v2_bot) | Образование | Консультант по зачислению |
+| [CruClub](https://t.me/cruclub_test_bot) | Туризм | Консультант по морским круизам |
+| [Застройщик](https://t.me/Developer_consultant_bot) | Строительство | Юридическая помощь по организации строительства |
+| [Евраз PM](https://t.me/evraz_pm_bot) | Корп. обучение | Помощник по управлению проектами |
+| R-Vision | Кибербезопасность | Экспертная поддержка по системе R-Vision |
+| [Лакокрасочный завод](https://t.me/Paint_test_sales_bot) | Производство | Менеджер по продаже ЛКМ |
+| Контент-менеджер | Маркетинг | Контент-планы, анализ трендов |
+| [Автоломбард](https://t.me/autolombars_bot) | Финансы | Виртуальный консультант |
+| [Видеонаблюдение](https://t.me/b0095_cam_bot) | Безопасность | Подбор систем, подготовка КП |
 
-`Python` `aiogram` `LLM` `AI Agents` `Prompt Engineering` `RAG` `Google Sheets API`
+---
+
+## Другие проекты
+
+### [Analytics Portal](http://147.45.184.55/) | [GitHub](https://github.com/Baho73/WhisperX-Audio-Pipeline)
+Платформа бизнес-аналитики: AI-скоринг звонков (BANT-квалификация, эмоциональный анализ DUSHA, рейтинг менеджеров) + строительный дашборд (EVM-анализ CPI/SPI, диаграмма Ганта, S-кривая бюджета).
+> Demo: `user` / `demo2024`
+
+### Weld Seam Detection | [Demo](https://youtu.be/ie_D0QS-dDo)
+Computer Vision на производственной линии колёсных дисков. YOLOv8 находит сварной шов в реальном времени через лазерную проекцию и управляет остановкой вращения для точного позиционирования.
+
+### [AI DevOps Automation](https://github.com/Baho73/ai-devops-automation)
+AI-агент для автоматизации деплоя: 15 секунд вместо 7 минут. Анализ логов, миграции БД, управление Docker-контейнерами по SSH.
+
+### [AeroflotSeg](https://github.com/Baho73/AeroflotSeg)
+CV-пайплайн сегментации объектов (PyTorch, SAM, U2-Net). Специализация на металлических объектах с бликами.
+
+### [Cluster Optimization](https://github.com/Baho73/cluster-optimization)
+Кластеризация 45K текстовых эмбеддингов. Очистка ансамблем (KNN, LOF, Isolation Forest), подбор k четырьмя метриками, KMeans + t-SNE.
+
+### [Trebuchet Simulator](https://github.com/Baho73/trebuchet-simulator)
+Физический симулятор: лагранжева механика, символьный вывод уравнений (SymPy), оптимизация генетическим алгоритмом. Дальность 2 840 м.
+
+### [XL2MD](https://baho73.github.io/XL2MD/) | [GitHub](https://github.com/Baho73/XL2MD)
+Конвертер Excel -> Markdown. Однофайловый инструмент без зависимостей.
+
+---
+
+## Стек
+
+**Backend:** Python, FastAPI, Docker, PostgreSQL, CI/CD
+
+**AI/ML:** PyTorch, scikit-learn, YOLOv8, OpenCV, LangChain, FAISS, WhisperX
+
+**LLM:** OpenAI, Claude, Gemini API, RAG, prompt engineering, multi-agent systems
+
+**Строительные стандарты:** DCMA-14, PRIM_X, EVM (CPI/SPI), критический путь, Primavera P6, MS Project, Spider Project
+
+---
 
 ## Контакты
 
