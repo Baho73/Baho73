@@ -76,6 +76,26 @@
 
 ---
 
+## Open-Source и инструменты для AI-агентов
+
+### MCP-серверы (Model Context Protocol)
+
+Инфраструктура для агентов по стандарту Anthropic MCP: серверы, дающие LLM прямой доступ к корпоративным системам.
+
+- [mcp-gdocs](https://github.com/Baho73/mcp-gdocs) - создание Google Docs из Markdown с полным форматированием (заголовки, таблицы, списки, bold/italic)
+- [mcp-server-max](https://github.com/Baho73/mcp-server-max) - Max/VK Teams: отправка и чтение сообщений, управление чатами
+- [mcp-server-matrix](https://github.com/Baho73/mcp-server-matrix) - Matrix-мессенджер: комнаты, сообщения, присутствие
+
+### GRACE Framework (contributor)
+
+[grace-marketplace](https://github.com/osovv/grace-marketplace) - open-source Claude Code plugin для контрактно-ориентированной агентной разработки. Автор [@osovv](https://github.com/osovv). Веду fork с Hardening Pass 1: разметка всех 13 skills anti-rationalization таблицами, evidence-driven verification чек-листы, усиление 5 ключевых skills (grace-fix, grace-reviewer, grace-multiagent-execute, grace-plan, grace-ask).
+
+**Roadmap:**
+- **grace-evolve** - autonomous evolutionary search, вдохновлён DeepMind FunSearch / AlphaEvolve и Sakana AI Scientist. Budget control, isolated git worktrees, archive результатов
+- **grace-afk** - unattended long-running agent harness с budget control, Telegram escalation для one-way-door решений, adaptive checkpoint cadence
+
+---
+
 ## Другие проекты
 
 ### [Analytics Portal](http://147.45.184.55/) | [GitHub](https://github.com/Baho73/WhisperX-Audio-Pipeline)
@@ -100,15 +120,25 @@ CV-пайплайн сегментации объектов (PyTorch, SAM, U2-Ne
 ### [XL2MD](https://baho73.github.io/XL2MD/) | [GitHub](https://github.com/Baho73/XL2MD)
 Конвертер Excel -> Markdown. Однофайловый инструмент без зависимостей.
 
+### [tg-contact-extractor](https://github.com/Baho73/tg-contact-extractor)
+Извлечение структурированных данных из Telegram-экспортов через LLM с настраиваемыми промптами. Применимо к чатам поддержки, CRM-миграциям, аналитике переписки.
+
+### [seo-generator](https://github.com/Baho73/seo-generator)
+SEO-генератор описаний товаров: NestJS + LangChain.js + Zod + OpenRouter. Типизированный пайплайн с валидацией схем через Zod - пример работы с LLM в Node.js/TypeScript-экосистеме.
+
 ---
 
 ## Стек
 
 **Backend:** Python, FastAPI, Docker, PostgreSQL, CI/CD
 
+**Node.js / TypeScript:** NestJS, LangChain.js, Zod
+
 **AI/ML:** PyTorch, scikit-learn, YOLOv8, OpenCV, LangChain, FAISS, WhisperX
 
 **LLM:** OpenAI, Claude, Gemini API, RAG, prompt engineering, multi-agent systems
+
+**Agent infrastructure:** MCP (Model Context Protocol), Claude Code skills, OpenRouter
 
 **Строительные стандарты:** DCMA-14, PRIM_X, EVM (CPI/SPI), критический путь, Primavera P6, MS Project, Spider Project
 

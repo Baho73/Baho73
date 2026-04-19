@@ -22,6 +22,31 @@ Python developer. I build AI products end-to-end: from concept to production-rea
 
 **DevOps:** Docker, CI/CD, deployment automation via Python + SSH
 
+**Agent infrastructure:** MCP (Model Context Protocol), Claude Code skills, OpenRouter, LangChain
+
+## Open Source & AI Agent Infrastructure
+
+### MCP Servers (Model Context Protocol)
+
+Production MCP servers implementing Anthropic's open standard for giving LLMs direct access to corporate systems:
+
+- [mcp-gdocs](https://github.com/Baho73/mcp-gdocs) - create Google Docs from Markdown with full formatting (headings, tables, lists, bold/italic)
+- [mcp-server-max](https://github.com/Baho73/mcp-server-max) - Max/VK Teams messenger: send/read messages, manage chats
+- [mcp-server-matrix](https://github.com/Baho73/mcp-server-matrix) - Matrix messenger: rooms, messages, presence
+
+### GRACE Framework (contributor)
+
+[grace-marketplace](https://github.com/osovv/grace-marketplace) - open-source Claude Code plugin for contract-driven agent engineering. Original author: [@osovv](https://github.com/osovv). Maintaining a fork with Hardening Pass 1: anti-rationalization patterns across all 13 skills, evidence-driven verification checklists, strengthening of 5 core skills (grace-fix, grace-reviewer, grace-multiagent-execute, grace-plan, grace-ask).
+
+**Roadmap:**
+- **grace-evolve** - autonomous evolutionary search inspired by DeepMind FunSearch / AlphaEvolve and Sakana AI Scientist. Budget control, isolated git worktrees, results archive
+- **grace-afk** - unattended long-running agent harness with budget control, Telegram escalation for one-way-door decisions, adaptive checkpoint cadence
+
+### Other open-source tools
+
+- [tg-contact-extractor](https://github.com/Baho73/tg-contact-extractor) - extract structured data from Telegram chat exports via LLM with customizable prompts
+- [seo-generator](https://github.com/Baho73/seo-generator) - SEO product description generator: NestJS + LangChain.js + Zod + OpenRouter. Typed pipeline with Zod schema validation
+
 ## Projects
 
 ### [Fluffy Fox Ear](https://foxear.ru) *(private repo)*
