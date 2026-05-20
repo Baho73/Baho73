@@ -54,6 +54,13 @@
 ### [Fluffy Fox Ear](https://foxear.ru) - транскрибация и протоколирование
 Корпоративный SaaS: загрузка аудиозаписей совещаний и защит, транскрибация (WhisperX), диаризация спикеров, генерация структурированных протоколов. Работа с несколькими микрофонами для выбора лучшей записи, анализ транскрибации с учётом контекста - например, текста диссертации или автореферата. Эта разработка также применена в проекте [Штаб](https://protokolov.net)
 
+### [vacancy.teamplan.ru](https://vacancy.teamplan.ru) - MVP «Ввод вакансии через AI-помощника» *(private repo)*
+Full-stack MVP для рекрутингового стартапа. Руководитель в чате описывает позицию - голосом или текстом - AI собирает структурированную вакансию с разделами (требования, обязанности, условия), задачи на интервью и чек-листы. 3-зонный UI: список вакансий ⇆ чат с AI ⇆ панель артефакта с inline-редактированием и real-time обновлениями через SSE. Voice-input с live VU-meter, auth-hardening, чек-листы автоматически расширяются по контексту.
+
+- Backend: Python 3.12 + FastAPI + SQLAlchemy 2.x async + Alembic + arq + Redis + Instructor + OpenRouter
+- Frontend: Next.js 15 + App Router + TypeScript + AI SDK Vercel + TanStack Query + Zustand + shadcn/ui
+- Полный цикл разработки по фреймворку GRACE - от requirements и knowledge-graph до verification-plan
+
 ---
 
 ## AI-агенты в продакшене
@@ -122,6 +129,12 @@ CV-пайплайн сегментации объектов (PyTorch, SAM, U2-Ne
 
 ### [rosreestr2coord](https://github.com/Baho73/rosreestr2coord) - координаты по кадастровому номеру
 Утилита: парсер nspd.gov.ru, выгрузка координат земельного участка по кадастровому номеру.
+
+### [tg-contact-extractor](https://github.com/Baho73/tg-contact-extractor) - LLM-extraction из Telegram
+Извлечение структурированных данных из экспортов Telegram-чатов через LLM. Кастомизируемые промпты под разные типы извлечения, вывод в JSON и Excel, dark GUI и CLI.
+
+### [seo-generator](https://github.com/Baho73/seo-generator) - SEO Product Description Generator
+Backend-сервис генерации SEO-описаний товаров. TypeScript-стек: NestJS + LangChain.js + Zod (валидация выхода LLM против схем) + OpenRouter.
 
 ---
 
