@@ -76,6 +76,23 @@
 
 ---
 
+## Open Source / AI Tooling
+
+### [GRACE Framework](https://github.com/Baho73/grace-marketplace-2) - Agent Skills для contract-driven AI-разработки
+Открытый Claude Code плагин: подход «сначала контракт, потом код». Меняет паттерн работы с LLM-coder'ом - модель не «пишет код», а реализует утверждённый MODULE_CONTRACT и knowledge graph.
+
+Я contributor: сделал Hardening Pass 1 для своего fork'а - anti-rationalization чек-листы для AI-агентов, evidence-driven verification (валидация результатов LLM против реального состояния кода и тестов), проверка целостности knowledge graph. Снижает количество правок после генерации, делает работу с AI-агентами предсказуемой.
+
+### MCP-серверы - инфраструктура для AI-агентов
+Семейство серверов Model Context Protocol для подключения LLM (Claude, Codex, Kilo Code) к мессенджерам и Google Docs. Использую сам, опубликовал в open source.
+
+- **[mcp-telegram](https://github.com/Baho73/mcp-telegram)** - подключение Telegram к Claude: сообщения, медиа, реакции, опросы, scheduled messages. Hosted-версия [mcp-telegram.com](https://mcp-telegram.com) - QR-логин за 30 секунд. На основе GramJS / MTProto.
+- **[mcp-gdocs](https://github.com/Baho73/mcp-gdocs)** - создание и обновление Google Docs из Markdown с полным форматированием (заголовки, таблицы, списки, bold/italic).
+- **[mcp-server-matrix](https://github.com/Baho73/mcp-server-matrix)** - Matrix: чтение и отправка сообщений, управление комнатами.
+- **[mcp-server-max](https://github.com/Baho73/mcp-server-max)** - Max (VK Teams) messenger.
+
+---
+
 ## Другие проекты
 
 ### [Analytics Portal](http://147.45.184.55/) | [GitHub](https://github.com/Baho73/WhisperX-Audio-Pipeline)
@@ -97,8 +114,27 @@ CV-пайплайн сегментации объектов (PyTorch, SAM, U2-Ne
 ### [Trebuchet Simulator](https://github.com/Baho73/trebuchet-simulator)
 Физический симулятор: лагранжева механика, символьный вывод уравнений (SymPy), оптимизация генетическим алгоритмом. Дальность 2 840 м.
 
+### [Acoustic Impact Localization](https://github.com/Baho73/acoustic-impact-localization)
+Определение точки удара акустической триангуляцией. 6 датчиков, нелинейная оптимизация методом наименьших квадратов.
+
 ### [XL2MD](https://baho73.github.io/XL2MD/) | [GitHub](https://github.com/Baho73/XL2MD)
 Конвертер Excel -> Markdown. Однофайловый инструмент без зависимостей.
+
+### [rosreestr2coord](https://github.com/Baho73/rosreestr2coord) - координаты по кадастровому номеру
+Утилита: парсер nspd.gov.ru, выгрузка координат земельного участка по кадастровому номеру.
+
+---
+
+## Тестовые задания
+
+### [cbr-currency-toolkit](https://github.com/Baho73/cbr-currency-toolkit) - утилиты курсов валют ЦБ РФ
+Тестовое задание из трёх частей в одном репозитории:
+- **FastAPI веб-конвертер** с retry, TTL-кэшем и кросс-конвертацией через рубль - развёрнут на [converter.teamplan.ru](https://converter.teamplan.ru).
+- **Async CLI** с обработкой данных ЦБ (суточная динамика, топ движений), экспортом в CSV/JSON, Docker и инструкцией.
+- **Google Apps Script** - выгрузка курсов в Google Таблицу по триггеру через UrlFetchApp.
+
+### [fullstack-test-task](https://github.com/Baho73/fullstack-test-task) - File Exchange MVP
+Тестовое задание fullstack: Python backend + React frontend, MVP файлового обмена.
 
 ---
 
@@ -108,7 +144,7 @@ CV-пайплайн сегментации объектов (PyTorch, SAM, U2-Ne
 
 **AI/ML:** PyTorch, scikit-learn, YOLOv8, OpenCV, LangChain, FAISS, WhisperX
 
-**LLM:** OpenAI, Claude, Gemini API, RAG, prompt engineering, multi-agent systems
+**LLM:** OpenAI, Claude, Gemini API, RAG, prompt engineering, multi-agent systems, MCP
 
 **Строительные стандарты:** DCMA-14, PRIM_X, EVM (CPI/SPI), критический путь, Primavera P6, MS Project, Spider Project
 
