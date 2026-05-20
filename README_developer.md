@@ -59,6 +59,10 @@ Full-stack MVP для рекрутингового стартапа. Руков�
 
 `Python 3.12` `FastAPI` `SQLAlchemy 2 async` `Next.js 15` `TypeScript` `AI SDK Vercel` `OpenRouter` `arq` `Redis` `Zustand` `shadcn/ui` `GRACE` `SSE`
 
+### Risk Graph — AI-first управление строительными рисками | *(private repo)*
+Knowledge graph на Neo4j + chat-интерфейс + 2D-визуализация графа рисков. AI-агент-навигатор: от запроса на естественном языке через генерацию Cypher-запроса до интерпретации результата. Векторный поиск по описаниям рисков и инцидентов, привязка к строительным нормам.
+`Python` `FastAPI` `Neo4j` `Cypher` `GraphRAG` `LangChain` `vector search`
+
 ### [Loomio AI](https://teamplan.ru) — Мультиагентная экспертная среда | *(private repo)*
 Экспертная среда на базе self-hosted Loomio с **тремя AI-экспертами** (Claude 4.6, Gemini 3.1 Pro, GPT 5.4). Когда человек-эксперт пишет в тред, ему по очереди отвечают три LLM, рассматривая вопрос с разных сторон. Создаёт коллаборативную среду для обсуждения сложных вопросов между человеком и тремя ИИ. Применяется для разработки расширенной методики анализа строительных графиков (с 31 до 100 пунктов проверки).
 `Ruby` `Loomio` `Claude API` `Gemini API` `OpenAI API` `Multi-Agent AI`
@@ -96,6 +100,7 @@ Full-stack MVP для рекрутингового стартапа. Руков�
 - **[mcp-gdocs](https://github.com/Baho73/mcp-gdocs)** — MCP server для создания и обновления Google Docs из Markdown с полным форматированием (заголовки, таблицы, списки, bold/italic).
 - **[mcp-server-matrix](https://github.com/Baho73/mcp-server-matrix)** — Matrix: чтение и отправка сообщений, управление комнатами через Model Context Protocol.
 - **[mcp-server-max](https://github.com/Baho73/mcp-server-max)** — Max (VK Teams) messenger: чтение/отправка сообщений, управление чатами.
+- **planpulse-mcp** *(private)* — MCP-сервер (stdio, Python) для интеграции Claude Code с PlanPulse: DCMA-анализ календарно-сетевых моделей .mpp / .xer / .xml прямо из AI-агента.
 
 `MCP` `TypeScript` `Python` `GramJS` `MTProto` `Claude Code integration`
 
@@ -140,6 +145,20 @@ CV-пайплайн сегментации объектов на фото с и�
 ### [seo-generator](https://github.com/Baho73/seo-generator) — SEO Product Description Generator
 Backend-сервис генерации SEO-описаний товаров. Демонстрация TypeScript-стека: NestJS + LangChain.js + Zod (валидация выхода LLM против схем) + OpenRouter для роутинга между моделями.
 `TypeScript` `NestJS` `LangChain.js` `Zod` `OpenRouter`
+
+### AudioStend — стенд распознавания аудиопотока с семантическим тегированием | *(private repo)*
+Исследовательский стенд для распознавания аудиопотока в реальном времени с автоматическим семантическим тегированием. Параллельная работа Google Cloud STT и WhisperX для сравнения качества, real-time веб-визуализация распознанных тегов.
+`Python` `WhisperX` `Google Cloud STT` `real-time` `web visualization`
+
+### EcoAuth / TG_Auth — централизованная Telegram-аутентификация | *(private repo)*
+Экосистема входа через Telegram для внешних приложений: Auth Hub (центральный сервис), клиентская библиотека для интеграции, CLI для управления, JWT-токены, FastAPI backend. Позволяет сторонним сервисам делегировать аутентификацию пользователей через Telegram-ботов.
+`Python` `FastAPI` `JWT` `Telegram Bot API` `aiogram`
+
+### HH_AI_Sender — AI-автоматизация откликов на hh.ru | *(private repo)*
+Личный AI-инструмент для работы с hh.ru. Парсинг вакансий по двум резюме параллельно (КСП + ML), AI-скоринг релевантности через локальный Ollama LLM, AI-генерация индивидуальных сопроводительных писем на основе описания вакансии (без шаблонов), отправка через браузерную автоматизацию.
+
+Backend: FastAPI + SQLite + фоновые воркеры (loader / scorer / sender) с pause-resume. Frontend: Vite + React + AG Grid. Pipeline черновиков: pending → ready → sent → errors / test_required.
+`Python` `FastAPI` `Vite` `React` `Ollama` `Playwright` `SQLite` `AG Grid`
 
 ### [Belbin Role Test](https://roletest.ru) *(private repo)*
 Веб-приложение для определения командных ролей по Белбину. Полноценный бэкенд с PostgreSQL, Docker-деплой.
