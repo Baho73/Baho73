@@ -48,6 +48,17 @@ Telegram-бот для автоматического выявления стр�
 SaaS для цифровизации протокола строительного штаба с AI-слоем. Автоматическое формирование протоколов совещаний, контроль поручений, отслеживание сроков исполнения. Интеграция с процессами стройки.
 `Python` `FastAPI` `Docker` `AI` `PostgreSQL`
 
+### [vacancy.teamplan.ru](https://vacancy.teamplan.ru) — MVP «Ввод вакансии через AI-помощника» | *(private repo)*
+Full-stack MVP для рекрутингового стартапа. Руководитель в чате описывает позицию голосом или текстом — AI собирает структурированную вакансию с разделами (требования, обязанности, условия), задачи на интервью и чек-листы. 3-зонный UI: список вакансий ⇆ чат с AI ⇆ панель артефакта с inline-edit и real-time обновлениями через SSE.
+
+**Backend**: Python 3.12 + FastAPI + SQLAlchemy 2.x async + Alembic + arq + Redis + Instructor + OpenRouter. Async-воркеры для генерации артефактов, полное логирование.
+
+**Frontend**: Next.js 15 + App Router + TypeScript + AI SDK Vercel + TanStack Query + Zustand + shadcn/ui. Voice-input с live VU-meter, inline-edit полей артефакта, SSE для real-time обновлений из бэкенда.
+
+**Workflow**: полный цикл разработки по фреймворку GRACE — requirements, knowledge-graph, technology, development-plan, verification-plan, design-doc 2500+ строк как обязательный input.
+
+`Python 3.12` `FastAPI` `SQLAlchemy 2 async` `Next.js 15` `TypeScript` `AI SDK Vercel` `OpenRouter` `arq` `Redis` `Zustand` `shadcn/ui` `GRACE` `SSE`
+
 ### [Loomio AI](https://teamplan.ru) — Мультиагентная экспертная среда | *(private repo)*
 Экспертная среда на базе self-hosted Loomio с **тремя AI-экспертами** (Claude 4.6, Gemini 3.1 Pro, GPT 5.4). Когда человек-эксперт пишет в тред, ему по очереди отвечают три LLM, рассматривая вопрос с разных сторон. Создаёт коллаборативную среду для обсуждения сложных вопросов между человеком и тремя ИИ. Применяется для разработки расширенной методики анализа строительных графиков (с 31 до 100 пунктов проверки).
 `Ruby` `Loomio` `Claude API` `Gemini API` `OpenAI API` `Multi-Agent AI`
@@ -121,6 +132,14 @@ CV-пайплайн сегментации объектов на фото с и�
 ### [rosreestr2coord](https://github.com/Baho73/rosreestr2coord) — координаты по кадастровому номеру
 Утилита: парсер сайта nspd.gov.ru, выгрузка координат земельного участка по кадастровому номеру. Для интеграции с ГИС-системами и автоматизации работы с проектной документацией.
 `Python` `parser` `Росреестр`
+
+### [tg-contact-extractor](https://github.com/Baho73/tg-contact-extractor) — LLM-extraction из Telegram-экспортов
+Утилита для извлечения структурированных данных (контакты, события, темы) из текстовых экспортов Telegram-чатов через LLM. Кастомизируемые промпты под разные типы извлечения, вывод в JSON и Excel, тёмный GUI и CLI.
+`Python` `LLM` `prompt engineering` `JSON` `Excel`
+
+### [seo-generator](https://github.com/Baho73/seo-generator) — SEO Product Description Generator
+Backend-сервис генерации SEO-описаний товаров. Демонстрация TypeScript-стека: NestJS + LangChain.js + Zod (валидация выхода LLM против схем) + OpenRouter для роутинга между моделями.
+`TypeScript` `NestJS` `LangChain.js` `Zod` `OpenRouter`
 
 ### [Belbin Role Test](https://roletest.ru) *(private repo)*
 Веб-приложение для определения командных ролей по Белбину. Полноценный бэкенд с PostgreSQL, Docker-деплой.
