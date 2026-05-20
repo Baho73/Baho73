@@ -19,6 +19,8 @@ Python-разработчик. Строю AI-продукты: от идеи д�
 
 **RAG:** FAISS, векторные БД, embeddings, поиск по документам, [Docling](https://github.com/Baho73/docling) (PDF→Markdown), [DolphinPDF](https://github.com/Baho73/DolphinPDF) (Document Image Parsing)
 
+**AI-агенты:** Claude Code, MCP (Model Context Protocol), Codex CLI, multi-agent orchestration, contract-driven generation
+
 **Backend:** aiogram, FastAPI, Docker, SSH-автоматизация, systemd
 
 **Интеграции:** Telegram Bot API, Google Sheets/Drive API, Tinkoff API
@@ -64,6 +66,30 @@ SaaS для цифровизации протокола строительног
 
 `Python` `WhisperX` `speaker diarization` `emotion analysis` `FastAPI`
 
+## Open Source / AI Tooling
+
+### [GRACE Framework](https://github.com/Baho73/grace-marketplace-2) — Agent Skills для contract-driven AI-разработки
+Открытый Claude Code плагин для AI-engineering методологии. Автор @osovv. Я contributor: сделал Hardening Pass 1 для своего fork'а:
+- **anti-rationalization чек-листы** для AI-агентов — заставляют модель проверять свой выход против evidence-цитат до финального ответа.
+- **evidence-driven verification** — валидация результатов LLM против реального состояния кода и тестов, а не «мне кажется».
+- **knowledge-graph integrity validation** — проверка целостности графа знаний модулей при генерации.
+
+Формализация «контракт-первый» подхода для AI-генерации кода: сначала MODULE_CONTRACT, потом knowledge graph, потом код. Меняет паттерн работы с LLM-coder'ом — модель не «пишет код», а реализует утверждённый контракт. На моих рабочих задачах заметно снизило количество правок после генерации.
+
+`Claude Code` `Agent Skills` `AI-driven development` `knowledge graphs` `contract-first`
+
+### MCP servers — Model Context Protocol для AI-агентов
+Семейство серверов MCP для подключения LLM к мессенджерам и сервисам. Использую сам в работе с Claude Code / Claude Desktop / Codex CLI, опубликовал в open source.
+
+- **[mcp-telegram](https://github.com/Baho73/mcp-telegram)** — подключение Telegram к Claude. Сообщения, медиа, реакции, опросы, scheduled messages и др. Hosted-версия: [mcp-telegram.com](https://mcp-telegram.com), QR-логин за 30 секунд. На основе GramJS / MTProto.
+- **[mcp-gdocs](https://github.com/Baho73/mcp-gdocs)** — MCP server для создания и обновления Google Docs из Markdown с полным форматированием (заголовки, таблицы, списки, bold/italic).
+- **[mcp-server-matrix](https://github.com/Baho73/mcp-server-matrix)** — Matrix: чтение и отправка сообщений, управление комнатами через Model Context Protocol.
+- **[mcp-server-max](https://github.com/Baho73/mcp-server-max)** — Max (VK Teams) messenger: чтение/отправка сообщений, управление чатами.
+
+`MCP` `TypeScript` `Python` `GramJS` `MTProto` `Claude Code integration`
+
+## Другие проекты
+
 ### [AI DevOps Automation](https://github.com/Baho73/ai-devops-automation)
 AI-агент для автоматизации DevOps-операций. Деплой за 15 сек вместо 7 мин, анализ логов за 10 сек, миграции БД за 30 сек. Агент читает скрипты и .env, подключается по SSH, управляет Docker-контейнерами.
 `Python` `LLM` `Docker` `SSH` `Paramiko`
@@ -92,9 +118,28 @@ CV-пайплайн сегментации объектов на фото с и�
 Конвертер таблиц Excel в Markdown. Однофайловый веб-инструмент — вставляете из Excel/Google Sheets, получаете готовую Markdown-таблицу. Без зависимостей, без сервера.
 `JavaScript` `HTML` `GitHub Pages`
 
+### [rosreestr2coord](https://github.com/Baho73/rosreestr2coord) — координаты по кадастровому номеру
+Утилита: парсер сайта nspd.gov.ru, выгрузка координат земельного участка по кадастровому номеру. Для интеграции с ГИС-системами и автоматизации работы с проектной документацией.
+`Python` `parser` `Росреестр`
+
 ### [Belbin Role Test](https://roletest.ru) *(private repo)*
 Веб-приложение для определения командных ролей по Белбину. Полноценный бэкенд с PostgreSQL, Docker-деплой.
 `Python` `PostgreSQL` `Docker` `JavaScript`
+
+## Тестовые задания
+
+### [cbr-currency-toolkit](https://github.com/Baho73/cbr-currency-toolkit) — утилиты курсов валют ЦБ РФ
+Тестовое задание из трёх частей в одном репозитории (полный цикл за один заход):
+
+1. **FastAPI веб-конвертер валют** — асинхронный HTTP-клиент с retry, TTL-кэш, кросс-конвертация через рубль с учётом номинала. Развёрнут: [converter.teamplan.ru](https://converter.teamplan.ru).
+2. **Async CLI-аналитик** — обработка данных ЦБ РФ (суточная динамика, топ движений, агрегаты), экспорт в CSV/JSON, Dockerfile, requirements.txt, инструкция по запуску.
+3. **Google Apps Script** — выгрузка курсов в Google Таблицу по триггеру через UrlFetchApp, обработка ошибок, запись статуса в отдельную колонку.
+
+`Python` `FastAPI` `async` `Docker` `Google Apps Script`
+
+### [fullstack-test-task](https://github.com/Baho73/fullstack-test-task) — File Exchange MVP
+Тестовое задание fullstack: Python backend + React frontend. MVP файлового обмена с загрузкой, хранением и выдачей файлов.
+`Python` `React` `fullstack`
 
 ## AI-агенты в продакшене
 
