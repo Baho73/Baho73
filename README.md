@@ -61,6 +61,9 @@ Full-stack MVP для рекрутингового стартапа. Руков�
 - Frontend: Next.js 15 + App Router + TypeScript + AI SDK Vercel + TanStack Query + Zustand + shadcn/ui
 - Полный цикл разработки по фреймворку GRACE - от requirements и knowledge-graph до verification-plan
 
+### Risk Graph - AI-first управление строительными рисками *(private repo)*
+Knowledge graph на Neo4j с GraphRAG, чат-интерфейс для риск-менеджера, 2D-визуализация графа. AI-агент на графе знаний: от пользовательского запроса на естественном языке - до сгенерированного Cypher-запроса и интерпретации результата. Векторный поиск по описаниям рисков и инцидентов, привязка к строительным нормам.
+
 ---
 
 ## AI-агенты в продакшене
@@ -97,6 +100,7 @@ Full-stack MVP для рекрутингового стартапа. Руков�
 - **[mcp-gdocs](https://github.com/Baho73/mcp-gdocs)** - создание и обновление Google Docs из Markdown с полным форматированием (заголовки, таблицы, списки, bold/italic).
 - **[mcp-server-matrix](https://github.com/Baho73/mcp-server-matrix)** - Matrix: чтение и отправка сообщений, управление комнатами.
 - **[mcp-server-max](https://github.com/Baho73/mcp-server-max)** - Max (VK Teams) messenger.
+- **planpulse-mcp** *(private)* - интеграция Claude Code с PlanPulse: DCMA-анализ календарно-сетевых моделей .mpp / .xer / .xml прямо из AI-агента.
 
 ---
 
@@ -135,6 +139,15 @@ CV-пайплайн сегментации объектов (PyTorch, SAM, U2-Ne
 
 ### [seo-generator](https://github.com/Baho73/seo-generator) - SEO Product Description Generator
 Backend-сервис генерации SEO-описаний товаров. TypeScript-стек: NestJS + LangChain.js + Zod (валидация выхода LLM против схем) + OpenRouter.
+
+### AudioStend - стенд распознавания аудиопотока с семантическим тегированием *(private repo)*
+Исследовательский стенд для распознавания аудиопотока в реальном времени с автоматическим семантическим тегированием. Параллельная работа Google Cloud STT и WhisperX для сравнения качества, real-time веб-визуализация распознанных тегов.
+
+### EcoAuth (TG_Auth) - централизованная Telegram-аутентификация *(private repo)*
+Экосистема входа через Telegram для внешних приложений: Auth Hub, клиентская библиотека, CLI, JWT + FastAPI. Позволяет сторонним сервисам делегировать аутентификацию пользователей через Telegram-ботов.
+
+### HH_AI_Sender - AI-автоматизация откликов на hh.ru *(private repo)*
+Личный AI-инструмент для работы с hh.ru: парсинг и скоринг вакансий через локальный Ollama LLM, AI-генерация индивидуальных сопроводительных писем на основе описания вакансии (без шаблонов), отправка через браузерную автоматизацию. Pipeline черновиков pending → ready → sent с pause-resume. FastAPI backend + Vite/React frontend + SQLite.
 
 ---
 
