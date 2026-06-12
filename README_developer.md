@@ -96,13 +96,14 @@ Knowledge graph на Neo4j + chat-интерфейс + 2D-визуализаци
 ### MCP servers — Model Context Protocol для AI-агентов
 Семейство серверов MCP для подключения LLM к мессенджерам и сервисам. Использую сам в работе с Claude Code / Claude Desktop / Codex CLI, опубликовал в open source.
 
+- **mcp-omnichannel** *(private)* — единый мультиканальный коммуникационный хаб для AI-агентов. Один shared-daemon на персону держит все соединения, абстракция «Channel» поверх Telegram (GramJS), WhatsApp (Baileys), Email (IMAP/SMTP) и Matrix со сквозным шифрованием (matrix-bot-sdk + нативный Rust-крипто/vodozemac — читает и пишет прямо в E2EE-комнатах). OS-level изоляция персон, hosted онбординг-портал (магик-линк, QR-подключение, демон-на-тенант), собран по фреймворку GRACE.
 - **[mcp-telegram](https://github.com/Baho73/mcp-telegram)** — подключение Telegram к Claude. Сообщения, медиа, реакции, опросы, scheduled messages и др. Hosted-версия: [mcp-telegram.com](https://mcp-telegram.com), QR-логин за 30 секунд. На основе GramJS / MTProto.
 - **[mcp-gdocs](https://github.com/Baho73/mcp-gdocs)** — MCP server для создания и обновления Google Docs из Markdown с полным форматированием (заголовки, таблицы, списки, bold/italic).
 - **[mcp-server-matrix](https://github.com/Baho73/mcp-server-matrix)** — Matrix: чтение и отправка сообщений, управление комнатами через Model Context Protocol.
 - **[mcp-server-max](https://github.com/Baho73/mcp-server-max)** — Max (VK Teams) messenger: чтение/отправка сообщений, управление чатами.
 - **planpulse-mcp** *(private)* — MCP-сервер (stdio, Python) для интеграции Claude Code с PlanPulse: DCMA-анализ календарно-сетевых моделей .mpp / .xer / .xml прямо из AI-агента.
 
-`MCP` `TypeScript` `Python` `GramJS` `MTProto` `Claude Code integration`
+`MCP` `TypeScript` `Python` `GramJS` `MTProto` `Baileys` `matrix-bot-sdk` `E2EE` `Claude Code integration`
 
 ## Другие проекты
 
