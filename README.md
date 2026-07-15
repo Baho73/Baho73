@@ -153,6 +153,9 @@ Backend-сервис генерации SEO-описаний товаров. Typ
 
 ## Тестовые задания
 
+### [splitmate](https://github.com/Baho73/splitmate) - учёт совместных расходов группы
+Тестовое задание: FastAPI + React + PostgreSQL в Docker. Группа ведёт общие траты, сервис считает кто кому сколько должен и предлагает минимальный набор переводов для взаиморасчёта. Запуск одной командой (`docker compose up`).
+
 ### [cbr-currency-toolkit](https://github.com/Baho73/cbr-currency-toolkit) - утилиты курсов валют ЦБ РФ
 Тестовое задание из трёх частей в одном репозитории:
 - **FastAPI веб-конвертер** с retry, TTL-кэшем и кросс-конвертацией через рубль - развёрнут на [converter.teamplan.ru](https://converter.teamplan.ru).

@@ -167,6 +167,10 @@ Backend: FastAPI + SQLite + фоновые воркеры (loader / scorer / sen
 
 ## Тестовые задания
 
+### [splitmate](https://github.com/Baho73/splitmate) — учёт совместных расходов группы
+Тестовое задание: группа ведёт общие траты, сервис считает кто кому сколько должен и предлагает минимальный набор переводов для взаиморасчёта. FastAPI backend, React frontend, PostgreSQL, всё в Docker, запуск одной командой (`docker compose up`).
+`Python` `FastAPI` `React` `PostgreSQL` `Docker`
+
 ### [cbr-currency-toolkit](https://github.com/Baho73/cbr-currency-toolkit) — утилиты курсов валют ЦБ РФ
 Тестовое задание из трёх частей в одном репозитории (полный цикл за один заход):
 
