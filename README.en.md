@@ -39,6 +39,10 @@ Telegram bot for automated detection of construction defects from photos. AI ana
 
 `Python` `aiogram` `Google Gemini` `Google Sheets API` `Tinkoff API`
 
+### FABLE — Scan-to-BIM pipeline *(private repo)*
+Laser scan point cloud (E57) → as-built IFC model (Archicad/Revit) + DXF floor plan + 25×25 mm surface deviation maps + finishing cost estimate (plaster, reveals, screed) as PDF. Robust modal plane fitting (orthogonal regression, furniture-resistant), economic optimum for leveling (grind bumps vs extra mortar volume), per-figure data confidence (measured / partial / scanner shadow), regression suite of 11 metrics on reference scans. Full run: 1.8 minutes.
+`Python` `Open3D` `NumPy/SciPy` `ifcopenshell` `ezdxf`
+
 ### Analytics Portal | [GitHub](https://github.com/Baho73/WhisperX-Audio-Pipeline)
 Business analytics platform with two dashboards:
 
