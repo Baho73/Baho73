@@ -76,7 +76,7 @@ Every week on site there is a coordination meeting. Dozens of action items, dead
 - Email notifications and a Telegram bot
 - Analytics dashboard, deadline tracking
 
-### [Loomio AI](https://teamplan.ru) - multi-agent expert environment
+### [Loomio AI](https://loomio.teamplan.ru) - multi-agent expert environment
 Three LLM experts (Claude, Gemini, GPT) reply in turn to a human expert in a thread, each looking at the question from a different angle. Built and used to develop an extended methodology for construction schedule analysis with ~100 experts involved.
 
 ### idea-collection - a mechanism base searchable by situation *(private repo)*
