@@ -17,9 +17,9 @@ Python-разработчик. Строю AI-продукты: от идеи д�
 
 **Scientific Computing:** SciPy, SymPy, Lagrangian mechanics, optimization (genetic algorithms, least squares)
 
-**AI/ML:** PyTorch, TensorFlow, YOLOv8, Google Gemini, WhisperX, speaker diarization, emotion analysis, computer vision
+**AI/ML:** PyTorch, YOLOv8, Google Gemini, WhisperX, speaker diarization, emotion analysis, computer vision
 
-**RAG:** FAISS, E5-эмбеддинги, чанкинг по смысловым блокам с метаданными, порог честного отказа, [Docling](https://github.com/Baho73/docling) (PDF→Markdown), [DolphinPDF](https://github.com/Baho73/DolphinPDF)
+**RAG:** FAISS, E5-эмбеддинги, чанкинг по смысловым блокам с метаданными, порог честного отказа, [Docling](https://github.com/docling-project/docling) (PDF→Markdown), [Dolphin](https://github.com/bytedance/Dolphin) (разбор сканов)
 
 **Голос и телефония:** OpenAI Realtime (речь-в-речь), Twilio, barge-in, AMD, двухдорожечная запись, transcript timecodes
 
@@ -29,12 +29,12 @@ Python-разработчик. Строю AI-продукты: от идеи д�
 
 **Интеграции:** Telegram Bot API, Google Sheets/Drive API, Tinkoff API, ЮKassa, IMAP/SMTP, DirectAdmin
 
-**DevOps:** Docker, CI/CD, автоматизация деплоя через Python + SSH, свой мониторинг всех прод-проектов
+**DevOps:** Docker, CI/CD, автоматизация деплоя через Python + SSH, свой мониторинг всех публичных проектов
 
 ## Проекты
 
 ### [PlanPulse](https://planpulse.ru) - [Telegram Bot](https://t.me/PrimaX_wbs_bot) | [Web App](https://planpulse.ru/app/) | *(private repo)*
-Продакшн-сервис для автоматического аудита расписаний строительных проектов. Микросервисная архитектура из 8 Docker-контейнеров: парсер 30+ форматов (Primavera P6, MS Project, Asta Powerproject и др. через MPXJ Java-мост), граф зависимостей (NetworkX), критический путь, 31 проверка по стандарту DCMA-14 и авторской методике PRIM_X. AI-пояснения через OpenRouter, экспорт отчётов в Google Docs, визуальный HTML-дашборд. Три интерфейса: Telegram-бот, веб-приложение (SPA), REST API. Биллинг через ЮKassa + Telegram Stars, админ-панель, корпоративный портал. CI/CD с автодеплоем на VPS. Рядом живёт сервис мониторинга, который следит за всеми моими публичными проектами, и AmneziaWG-сайдкар для Telegram с заблокированных хостингов.
+Продакшн-сервис для автоматического аудита расписаний строительных проектов. 12 Docker-контейнеров (парсер, анализ, отчёт, дашборд, проверка логики, бот, API, админка, лендинг, VPN-сайдкар, автоперезапуск, мониторинг). Внутри: парсер 30+ форматов (Primavera P6, MS Project, Asta Powerproject и др. через MPXJ Java-мост), граф зависимостей (NetworkX), критический путь, 31 проверка по стандарту DCMA-14 и авторской методике PRIM_X. AI-пояснения через OpenRouter, экспорт отчётов в Google Docs, визуальный HTML-дашборд. Три интерфейса: Telegram-бот, веб-приложение (SPA), REST API. Биллинг через ЮKassa + Telegram Stars, админ-панель, корпоративный портал. CI/CD с автодеплоем на VPS. Сервис мониторинга раз в 15 минут опрашивает API, Telegram-бота и каждый мой публичный сайт (проверка по ключевому слову на странице) и шлёт алерт при сбое. AmneziaWG-сайдкар - для Telegram с заблокированных хостингов.
 `Python` `FastAPI` `Docker` `MPXJ` `NetworkX` `aiogram` `Google Docs API` `OpenRouter` `nginx` `DCMA-14`
 
 ### Голосовой AI-агент с телефонией - «тайный покупатель» | *(private repo, коммерческий заказ)*
@@ -42,8 +42,8 @@ Python-разработчик. Строю AI-продукты: от идеи д�
 
 Что внутри: `POST /v1/calls` с идемпотентностью по `order_id` (повтор → 200, изменённое тело → 409); DTMF-донабор добавочного; конечный автомат статусов с `status_history`; barge-in ≤1 с (замер по двухдорожечной отладочной записи, агент и собеседник раздельно); пауза ответа ≤3 с; AMD - автоответчик распознаётся и расходует попытку; лимит 3 линий с расчётом ёмкости в секундах и честным 429; персистентная очередь, переживающая рестарт; подписанные вебхуки at-least-once с `delivery_log` и `GET /result` как фолбэк; загрузка WAV напрямую в хранилище заказчика по presigned PUT; TTL 7 суток и `410 gone`; телефонная деградация, фоны локаций (CC0), голос/темп/тон параметрами заказа. В логах ни номеров, ни текстов реплик.
 
-Спецификация интерфейса v1.2 прошла внешнее ревью (24 правки, 3 P0) и закалку через FPF (12 P0); 5 противоречий разрешены по ТРИЗ. Перечень зависимостей с лицензиями прикладывается к каждой сдаче.
-`Python` `FastAPI` `OpenAI Realtime` `Twilio` `asyncio` `webhooks` `GRACE 4` `FPF` `ТРИЗ`
+Спецификация интерфейса v1.2 прошла два прохода: внешнее ревью (24 правки, 3 P0) и разбор по FPF (First Principles Framework, открытая методология проверки спецификаций; 12 P0 закрыты); 5 противоречий разрешены по ТРИЗ. Перечень зависимостей с лицензиями прикладывается к каждой сдаче.
+`Python` `FastAPI` `OpenAI Realtime` `Twilio` `asyncio` `webhooks` `GRACE` `FPF` `ТРИЗ`
 
 ### Прогноз финансовых временных рядов на Chronos-2 | *(private, NDA)*
 Недельное переобучение foundation-модели с нуля на каждую отсечку: свой датасет, своя модель, прогноз только своей недели. 7 модулей (`calendar`, `raw_store`, `dataset`, `trainer`, `forecaster`, `loader`, `run`), каждый возвращает отчёт с проверкой, а не данные. Боевой прогон на 16 отсечках, dry-run, продолжение после сбоя. ClickHouse как хранилище свечей и прогнозов, GPU в контейнере, история 5 лет, два таймфрейма.
@@ -52,7 +52,7 @@ Python-разработчик. Строю AI-продукты: от идеи д�
 `Python` `AutoGluon` `Chronos-2` `ClickHouse` `GPU` `GRACE 4`
 
 ### [Fluffy Fox Ear](https://foxear.ru) *(private repo)*
-Корпоративный SaaS для транскрибации защит диссертаций. Полный цикл: загрузка аудио, очередь на Celery + Redis, транскрибация WhisperX, диаризация спикеров, генерация протоколов, биллинг ЮKassa.
+Корпоративный SaaS для транскрибации защит диссертаций. Полный цикл: загрузка аудио, очередь на Celery + Redis, транскрибация WhisperX, диаризация спикеров, генерация протоколов.
 `Python` `TypeScript` `Celery` `Redis` `WhisperX` `Docker`
 
 ### DefectMaster Bot - [stroycontrolbot.ru](https://stroycontrolbot.ru) | [stroycontrolai.ru](https://stroycontrolai.ru) | *(private repo)*
@@ -71,7 +71,7 @@ SaaS для цифровизации протокола строительног
 `Python` `FastAPI` `Docker` `AI` `PostgreSQL`
 
 ### idea-collection - база механизмов с RAG и MCP | *(private repo)*
-2477 карточек из 30 источников (теория игр, mechanism design, стратагемы, Талеб), 26 книг разобраны LLM-агентами в конспекты. Свой RAG-стор: SQLite-индекс, поиск по описанию ситуации. MCP-сервер на 5 инструментов (`mech_search`, `mech_card`, `mech_related`, `mech_for_triz`, `mech_random`). Граф связей 279 проверенных рёбер. Карта ТРИЗ: 40 приёмов + 204 поисковых термина, 4 источника слиты. Диверсионный разбор ядра: 284 атаки с контрмерами, 146 усилений. Ведётся по GRACE 4 автономными AFK-сессиями, системный FPF-аудит.
+2477 карточек из 30 источников (теория игр, mechanism design, стратагемы, Талеб), 26 книг разобраны LLM-агентами в конспекты. Свой RAG-стор: SQLite-индекс, поиск по описанию ситуации. MCP-сервер на 5 инструментов (`mech_search`, `mech_card`, `mech_related`, `mech_for_triz`, `mech_random`). Граф связей 279 проверенных рёбер. Карта ТРИЗ: 40 приёмов + 204 поисковых термина, 4 источника слиты. Диверсионный разбор ядра: 284 атаки с контрмерами, 146 усилений. Ведётся по GRACE 4 автономными AFK-сессиями, проведён системный разбор по FPF.
 `Python 3.12` `SQLite` `RAG` `MCP` `GRACE 4` `FPF` `ТРИЗ`
 
 ### [vacancy.teamplan.ru](https://vacancy.teamplan.ru) - MVP «Ввод вакансии через AI-помощника» | *(private repo)*
@@ -85,7 +85,7 @@ Full-stack MVP для рекрутингового стартапа. Руков�
 
 `Python 3.12` `FastAPI` `SQLAlchemy 2 async` `Next.js 15` `TypeScript` `AI SDK Vercel` `OpenRouter` `arq` `Redis` `Zustand` `shadcn/ui` `GRACE` `SSE`
 
-### Risk Graph - AI-first управление строительными рисками | *(private repo)*
+### Risk Graph (прототип) - AI-first управление строительными рисками | *(private repo)*
 Knowledge graph на Neo4j + chat-интерфейс + 2D-визуализация графа рисков. AI-агент-навигатор: от запроса на естественном языке через генерацию Cypher-запроса до интерпретации результата. Векторный поиск по описаниям рисков и инцидентов, привязка к строительным нормам.
 `Python` `FastAPI` `Neo4j` `Cypher` `GraphRAG` `LangChain` `vector search`
 
@@ -113,33 +113,33 @@ Knowledge graph на Neo4j + chat-интерфейс + 2D-визуализаци
 
 ## Open Source / AI Tooling
 
-### [GRACE Framework](https://github.com/Baho73/grace-marketplace-2) - Agent Skills для contract-driven AI-разработки
-Открытый Claude Code плагин для AI-engineering методологии. Автор @osovv. Я contributor:
-- **Hardening Pass 1** - anti-rationalization чек-листы для AI-агентов (модель проверяет свой выход против evidence-цитат до финального ответа), evidence-driven verification (валидация результатов LLM против реального состояния кода и тестов), knowledge-graph integrity validation.
-- **Предложение в апстрим об обратимых эффектах** (август 2026) - поля EFFECTS и REVERT в контракте каждого модуля, автоматический инвентарь эффектов проекта. Агент знает не только что модуль делает, но и как это откатить. Статья RU + EN, проверена через FPF, обкатана на claudebar при миграции GRACE 3 → 4.
+### [GRACE Framework](https://github.com/osovv/grace-marketplace) - Agent Skills для contract-driven AI-разработки
+Открытый Claude Code плагин для AI-engineering методологии. Автор @osovv. Мой вклад:
+- **В апстрим** - [PR #26](https://github.com/osovv/grace-marketplace/pull/26) grace-afk: автономный режим с бюджетом и эскалацией в Telegram (на ревью).
+- **В своём форке** - Hardening Pass 1: anti-rationalization чек-листы для AI-агентов (модель проверяет свой выход против evidence-цитат до финального ответа), evidence-driven verification (валидация результатов LLM против реального состояния кода и тестов), knowledge-graph integrity validation.
+- **Предложение об обратимых эффектах** (август 2026) - поля EFFECTS и REVERT в контракте каждого модуля, автоматический инвентарь эффектов проекта. Агент знает не только что модуль делает, но и как это откатить. Статья [RU](https://github.com/Baho73/claudebar/blob/main/docs/grace-proposal-revertible-effects.md) и [EN](https://github.com/Baho73/claudebar/blob/main/docs/grace-proposal-revertible-effects.en.md), обкатано на claudebar при миграции GRACE 3 → 4; PR в апстрим - следующий шаг.
 
 Формализация «контракт-первый» подхода: сначала MODULE_CONTRACT, потом knowledge graph, потом код. На моих рабочих задачах заметно снизило количество правок после генерации.
 
 `Claude Code` `Agent Skills` `AI-driven development` `knowledge graphs` `contract-first`
 
 ### [claudebar](https://github.com/Baho73/claudebar) - панель для параллельных агентных сессий
-Rust + Win32, always-on-top переключатель между открытыми сессиями Claude Code и редакторами. v0.4.1: индикатор входящих с иконками источников (Gmail, Яндекс, Mail.ru, Telegram, MAX), строка-родитель собирает письма вложенных проектов, письмо открывается по клику через роутер, «разобрано» = три плюса в первой строке, флаг снимает читатель. Мигрирован с GRACE 3 на GRACE 4: 8 модулей с контрактами, включая EFFECTS/REVERT, инвентарь эффектов.
+Rust + Win32, always-on-top переключатель между открытыми сессиями Claude Code и редакторами. v0.4.1 (релиз, июнь 2026) + main (август 2026): индикатор входящих с иконками источников (Gmail, Яндекс, Mail.ru, Telegram, MAX), строка-родитель собирает письма вложенных проектов, письмо открывается по клику через роутер, «разобрано» = три плюса в первой строке, флаг снимает читатель. Мигрирован с GRACE 3 на GRACE 4: 8 модулей с контрактами, включая EFFECTS/REVERT, инвентарь эффектов.
 `Rust` `Win32` `GRACE 4`
 
 ### MCP servers - Model Context Protocol для AI-агентов
-Семейство серверов MCP для подключения LLM к мессенджерам, почте, документам и железу. Использую сам в работе с Claude Code / Claude Desktop / Codex CLI, часть опубликована.
+Семейство серверов MCP для подключения LLM к мессенджерам, почте, документам и железу. 7 своих MCP-серверов: mail-mcp, mcp-gdocs, mcp-server-matrix, mcp-server-max, music, mech, planpulse-mcp; вклад в чужие: mcp-telegram (PR #49 принят). Использую сам в работе с Claude Code / Claude Desktop / Codex CLI, часть опубликована.
 
-- **[mcp-telegram](https://github.com/Baho73/mcp-telegram)** - подключение Telegram к Claude. Сообщения, медиа, реакции, опросы, scheduled messages и др. Hosted-версия: [mcp-telegram.com](https://mcp-telegram.com), QR-логин за 30 секунд. На основе GramJS / MTProto.
 - **mail-mcp** *(private)* - почта над несколькими IMAP/SMTP (Gmail, Яндекс, Mail.ru, MXroute) + DirectAdmin API для управления ящиками. Тулзы `list_accounts / fetch / read_message / search / history / forget` с `requester_id` - одно письмо не отдаётся дважды. Роутер входящих раскладывает почту, Telegram и MAX по `.inbox` проектов и зажигает значок в claudebar; вложения тянутся на диск. Фоллбэк на STARTTLS, когда антивирус перехватывает 993/465.
-- **mcp-omnichannel** *(private)* - единый мультиканальный хаб для AI-агентов. Один shared-daemon на персону держит все соединения, абстракция «Channel» поверх Telegram (GramJS), WhatsApp (Baileys), Email (IMAP/SMTP) и Matrix со сквозным шифрованием (matrix-bot-sdk + vodozemac). OS-level изоляция персон, hosted онбординг-портал.
 - **[mcp-gdocs](https://github.com/Baho73/mcp-gdocs)** - создание и обновление Google Docs из Markdown с полным форматированием.
 - **[mcp-server-matrix](https://github.com/Baho73/mcp-server-matrix)** - Matrix: чтение и отправка сообщений, управление комнатами.
-- **[mcp-server-max](https://github.com/Baho73/mcp-server-max)** - мессенджер MAX. Плюс вклад в [renosaza/max-mcp](https://github.com/renosaza/max-mcp): восстановление после обновления клиента, фиксация отпечатка (иначе MAX отзывает сессию), `get_file_url` для вложений.
+- **[mcp-server-max](https://github.com/Baho73/mcp-server-max)** - мессенджер MAX. Плюс форк [renosaza/max-mcp](https://github.com/renosaza/max-mcp): восстановление после обновления клиента, отпечаток сессии, скачивание вложений (PR в апстрим - следующий шаг).
 - **music** *(private)* - пульт Яндекс Станции, см. выше.
 - **mech** *(private)* - поиск механизмов в idea-collection, см. выше.
 - **planpulse-mcp** *(private)* - MCP-сервер (stdio, Python) для интеграции Claude Code с PlanPulse: DCMA-анализ календарно-сетевых моделей .mpp / .xer / .xml прямо из AI-агента.
+- **mcp-telegram** (апстрим [mcp-telegram/mcp-telegram](https://github.com/mcp-telegram/mcp-telegram)) - мой вклад принят в апстрим: режим shared daemon, чтобы несколько MCP-клиентов работали через одну сессию ([PR #49](https://github.com/mcp-telegram/mcp-telegram/pull/49)). В своём форке - перевод на GRACE и systemd-деплой. GramJS / MTProto.
 
-`MCP` `TypeScript` `Python` `Rust` `GramJS` `MTProto` `Baileys` `matrix-bot-sdk` `E2EE` `IMAP/SMTP` `Claude Code integration`
+`MCP` `TypeScript` `Python` `Rust` `GramJS` `MTProto` `IMAP/SMTP` `Claude Code integration`
 
 ## Другие проекты
 
@@ -147,7 +147,7 @@ Rust + Win32, always-on-top переключатель между открыты
 AI-агент для автоматизации DevOps-операций. Деплой за 15 сек вместо 7 мин, анализ логов за 10 сек, миграции БД за 30 сек. Агент читает скрипты и .env, подключается по SSH, управляет Docker-контейнерами.
 `Python` `LLM` `Docker` `SSH` `Paramiko`
 
-### [AeroflotSeg](https://github.com/Baho73/AeroflotSeg)
+### [AeroflotSeg](https://github.com/Baho73/AeroflotSeg) (хакатон)
 CV-пайплайн сегментации объектов на фото с использованием нейросетей PyTorch: детекция bbox, кроп, ресайз и финальная сегментация (rembg, SAM, U2-Net). Специализация на металлических объектах с бликами - подбор и сравнение моделей для сложных кейсов.
 `Python` `PyTorch` `OpenCV` `SAM` `U2-Net` `computer vision`
 
@@ -163,7 +163,7 @@ CV-пайплайн сегментации объектов на фото с и�
 Определение точки удара на поверхности методом акустической триангуляции. 6 датчиков, нелинейная оптимизация (least squares), визуализация результатов.
 `Python` `NumPy` `SciPy` `Matplotlib`
 
-### Weld Seam Detection | [Demo](https://youtu.be/ie_D0QS-dDo)
+### Weld Seam Detection (пилот на производственной линии) | [Demo](https://youtu.be/ie_D0QS-dDo)
 Система компьютерного зрения для производственной линии колёсных дисков. Детекция сварного шва в реальном времени через лазерную проекцию и YOLOv8. Определяет положение шва для точного позиционирования - отверстие под ниппель сверлится строго с противоположной стороны. Управление вращением диска: остановка при достижении нужной позиции.
 `Python` `YOLOv8` `OpenCV` `computer vision` `industrial automation`
 
@@ -171,8 +171,8 @@ CV-пайплайн сегментации объектов на фото с и�
 Конвертер таблиц Excel в Markdown. Однофайловый веб-инструмент - вставляете из Excel/Google Sheets, получаете готовую Markdown-таблицу. Без зависимостей, без сервера.
 `JavaScript` `HTML` `GitHub Pages`
 
-### [rosreestr2coord](https://github.com/Baho73/rosreestr2coord) - координаты по кадастровому номеру
-Утилита: парсер сайта nspd.gov.ru, выгрузка координат земельного участка по кадастровому номеру. Для интеграции с ГИС-системами и автоматизации работы с проектной документацией.
+### [rosreestr2coord](https://github.com/rendrom/rosreestr2coord) (автор rendrom, 200+ звёзд) - координаты по кадастровому номеру
+Мои PR #111-#114: восстановление экспорта Area, фикс batch/export под новый API nspd.gov.ru, валидация кадастрового номера, логирование без глобального basicConfig (на ревью мейнтейнера).
 `Python` `parser` `Росреестр`
 
 ### [tg-contact-extractor](https://github.com/Baho73/tg-contact-extractor) - LLM-extraction из Telegram-экспортов
@@ -183,11 +183,11 @@ CV-пайплайн сегментации объектов на фото с и�
 Backend-сервис генерации SEO-описаний товаров. Демонстрация TypeScript-стека: NestJS + LangChain.js + Zod (валидация выхода LLM против схем) + OpenRouter для роутинга между моделями.
 `TypeScript` `NestJS` `LangChain.js` `Zod` `OpenRouter`
 
-### AudioStend - стенд распознавания аудиопотока с семантическим тегированием | *(private repo)*
+### AudioStend (исследовательский стенд) - распознавание аудиопотока с семантическим тегированием | *(private repo)*
 Исследовательский стенд для распознавания аудиопотока в реальном времени с автоматическим семантическим тегированием. Параллельная работа Google Cloud STT и WhisperX для сравнения качества, real-time веб-визуализация распознанных тегов.
 `Python` `WhisperX` `Google Cloud STT` `real-time` `web visualization`
 
-### EcoAuth / TG_Auth - централизованная Telegram-аутентификация | *(private repo)*
+### EcoAuth / TG_Auth (внутренняя инфраструктура) - централизованная Telegram-аутентификация | *(private repo)*
 Экосистема входа через Telegram для внешних приложений: Auth Hub (центральный сервис), клиентская библиотека для интеграции, CLI для управления, JWT-токены, FastAPI backend. Позволяет сторонним сервисам делегировать аутентификацию пользователей через Telegram-ботов.
 `Python` `FastAPI` `JWT` `Telegram Bot API` `aiogram`
 
@@ -206,16 +206,16 @@ Backend: FastAPI + SQLite + фоновые воркеры (loader / scorer / sen
 Тестовые задания ниже я довожу не до «работает», а до формата разбора: постановка, принятые решения и отвергнутые альтернативы, замер, честный список того, что не сделано. Так они становятся учебными кейсами, а не строчками в портфолио.
 
 Что в этом массиве:
-- **11 публичных репозиториев**, из них шесть - полные кейсы с измеренными цифрами. Автотесты в девяти, 370+ там, где число названо.
+- **11 публичных репозиториев**, из них шесть - полные кейсы с измеренными цифрами. Автотесты в девяти из одиннадцати; в семи README названо число, суммарно 370+.
 - **Видимая развилка вместо готового ответа.** Три стратегии поиска по документу с таблицей токенов, задержки и цены. Отказ от LLM в пользу правил с объяснением, почему эмбеддинги здесь лишние. Порог честного отказа, откалиброванный по данным и закрытый тестом.
-- **Разбор собственных ошибок как материал.** В одном кейсе показано, как метрика давала 30 из 30, и почему честная цифра - 17 из 30. В другом - четыре случая, где я оказался неправ, и чем именно это поймал.
+- **Разбор собственных ошибок как материал.** В annual-report-qa показано, как метрика давала 30 из 30, и почему честная цифра - 17 из 30. В vibecheck - четыре случая, где я оказался неправ, и чем именно это поймал.
 - **Сквозные приёмы**, которые повторяются от кейса к кейсу: честный отказ вместо догадки, тесты без сети на фикстурах, отдельный документ «решения и отвергнутые альтернативы», раздел «что не сделал и почему».
 
 Методические активы:
-- **Гайд «От чата к агентам»** для непрограммистов: ~22 000 слов, 10 практических рецептов формата «постановка, промпт, грабли, чем проверить», 8 разборов агентных оболочек (Claude Code, Codex CLI, Gemini CLI, Cline и другие), полигон с синтетическими данными и эталонными ответами. Безопасность стоит первым шагом, до установки чего-либо. Собирается в один документ скриптом, публикуется по постоянной ссылке, обратная связь через комментарии читателей.
+- **Гайд «От чата к агентам»** для непрограммистов: ~22 000 слов, 10 практических рецептов формата «постановка, промпт, грабли, чем проверить», 8 разборов агентных оболочек (Claude Code, Codex CLI, Gemini CLI, Cline и другие), полигон с синтетическими данными и эталонными ответами. Безопасность стоит первым шагом, до установки чего-либо. Доступен по запросу.
 - **Конвейер подготовки учебных материалов**: исследование → проектирование от результата → три независимые проверки (композиция, противоречия по ТРИЗ, переобещание). Каждый этап атакует результат предыдущего, а не дополняет его. Улов на одном комплекте: 10 дефектов композиции, 5 решений из противоречий, 12 мест, где заявление было сильнее доказательства.
 - **Методические ответы наставника** ([test-07-11](https://github.com/Baho73/test-07-11)): почему RAG сыпется на живых вопросах и как мерить retrieval и generation раздельно; разбор кода студента по семи пунктам; план на две-три недели для застрявшего.
-- Автор учебных кейсов и ревьюер в образовательных AI-проектах (под NDA). Loomio AI применяется для методической работы с ~100 экспертами. В idea-collection - полка для авторов курсов на 152 карточки.
+- Автор учебных кейсов и ревьюер в образовательных AI-проектах (под NDA). Loomio AI применяется для методической работы в закрытой группе из ~100 приглашённых экспертов по КСП. В idea-collection - полка для авторов курсов на 152 карточки.
 
 ## Тестовые задания
 
@@ -243,7 +243,7 @@ Backend: FastAPI + SQLite + фоновые воркеры (loader / scorer / sen
 Тестовое: проверка запросов к Agent API «Вайб-Маркетолог» по их же каталогу - до отправки и до списания денег.
 `Python` `validation`
 
-### [test-07-11](https://github.com/Baho73/test-07-11) - наставник курса «ИИ-инженер»
+### [test-07-11](https://github.com/Baho73/test-07-11) - наставник курса по AI-инженерии
 Тестовое на позицию наставника: 6 заданий с ответами.
 
 ### [splitmate](https://github.com/Baho73/splitmate) - учёт совместных расходов группы
@@ -263,9 +263,13 @@ Backend: FastAPI + SQLite + фоновые воркеры (loader / scorer / sen
 Тестовое задание fullstack: Python backend + React frontend. MVP файлового обмена с загрузкой, хранением и выдачей файлов.
 `Python` `React` `fullstack`
 
-## AI-агенты в продакшене
+### [file-stats-service](https://github.com/Baho73/file-stats-service) - статистика цифр по файлам из внешнего API
+Скачивание каталога файлов из внешнего API с rate-limit и статистика цифр 0-9; FastAPI + httpx + SQLite, спроектирован по GRACE.
+`Python` `FastAPI` `httpx` `SQLite` `GRACE`
 
-11 ИИ-агентов на базе LLM, задеплоенных в продакшен. Автоматизация продаж, консультаций и клиентской поддержки в различных отраслях:
+## AI-агенты для заказчиков (пилоты и демо)
+
+11 агентов на базе LLM под заказ; по ссылкам - демо-версии, боевые стоят у заказчиков. У большинства - RAG по документам заказчика и интеграции (Google Sheets, назначение Zoom-встреч, Битрикс24). Автоматизация продаж, консультаций и клиентской поддержки:
 
 | Агент | Сфера | Задача |
 |-----|-------|--------|
