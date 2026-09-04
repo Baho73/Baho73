@@ -290,4 +290,3 @@ Backend: FastAPI + SQLite + фоновые воркеры (loader / scorer / sen
 ## Контакты
 
 [![Telegram](https://img.shields.io/badge/Telegram-@IvanPonomarev-blue?logo=telegram)](https://t.me/IvanPonomarev)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ivanponomarev-blue?logo=linkedin)](https://linkedin.com/in/ivanponomarev)
